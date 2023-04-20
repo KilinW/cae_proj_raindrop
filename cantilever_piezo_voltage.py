@@ -2,7 +2,7 @@
 # The model is cantilever with tip mass and a piezoelectric layer
 import numpy as np
 from scipy.optimize import root
-
+import matplotlib.pyplot as plt
 
 # 1 # cantilever film dimensions
 M1 = 11 * 1e-6                  ## tip mass in kg (referring to raindrop)
@@ -54,8 +54,8 @@ def det_A_v1(alpha: np.float64) -> float:
     sinh = np.sinh(alpha*L1)
     det_value = 1 + cos*cosh + \
                 (M1*alpha/m1)*(cos*sinh-sin*cosh) - \
-                (J1*alpha**3/m1)*(cosh*sin+sinh*cos) + \
-                (M1*J1*alpha**4/m1**2)*(1-cos*cosh)
+                (J1*alpha**3/m1)*(cosh*sin+sinh*cos) - \
+                (M1*J1*alpha**4/m1**2)*(cos*cosh-1)
             
     return det_value
 
@@ -74,4 +74,21 @@ def det_A_v2(alpha: np.float64) -> float:
             
     return det_value
 
-print(det_A_v1(50), det_A_v2(50))
+def plot_functions():
+    alpha_values = np.linspace(0, 100, 1000)
+    det_A_v1_values = [det_A_v1(alpha) for alpha in alpha_values]
+    det_A_v2_values = [det_A_v2(alpha) for alpha in alpha_values]
+
+    plt.plot(alpha_values, det_A_v1_values, label="det_A_v1")
+    plt.plot(alpha_values, det_A_v2_values, label="det_A_v2")
+    plt.xlabel("Alpha")
+    plt.ylabel("Function Value")
+    plt.title("det_A_v1 and det_A_v2 Functions")
+    plt.legend()
+    plt.grid()
+    plt.savefig("det_A_v1_and_det_A_v2_functions.png")
+
+plot_functions()
+
+
+
