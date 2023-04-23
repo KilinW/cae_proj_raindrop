@@ -5,6 +5,15 @@ from sympy import sin, sinh, cos, cosh
 from math import pi, ceil, floor
 from scipy.optimize import root, fmin
 from scipy.integrate import solve_ivp
+import argparse
+
+def parser():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--force", default=1.92, type=float)
+    args = parser.parse_args()
+    return args
+
+args = parser()
 
 ## Unit: kg, m, s
 
@@ -59,7 +68,8 @@ alpha = ( omega**2 * m1 / EI1 )**( 1 / 4 )
 
 #### XX = [A1 B1 C1 D1]', AA*XX = CC, CC = 0
 ## with Mass
-
+force = 0.08*24
+force = args.force
 
 def Cantilever_mass_fcn( t, in_, para ):
     [ Cp, R, vphi, zeta, omega, Nr, acc, rate, freq_s_hz ] = para
@@ -68,7 +78,7 @@ def Cantilever_mass_fcn( t, in_, para ):
     eta1 = in_[ 0 ]
     eta1dot = in_[ 1 ]
     v2 = in_[ 2 ]
-    force = 0.08*24
+    # force = force
     eta1ddot = -2 * zeta * omega * eta1dot - omega**2 * eta1 - vphi*v2 - force
     v2dot = -1 / ( Cp*R ) * v2 + vphi/Cp*eta1dot
 
@@ -243,6 +253,8 @@ for mode in range( mode_find ):
 
         print( r.y[ 0 ] )
         print( r.y[ 2 ] )
+        np.save(f"displacement_{force}.npy", r.y[0])
+        np.save(f"voltage_{force}.npy", r.y[2])
         figure, ax = plt.subplots( 2, 1 )
         ax[ 0 ].plot( r.t, r.y[ 0 ] * phi1_L1 * 1e3 )
         ax[ 0 ].set_ylabel( 'Displacement' )
@@ -250,4 +262,4 @@ for mode in range( mode_find ):
         ax[ 1 ].plot( r.t, r.y[ 2 ] )
         ax[ 1 ].set_ylabel( 'Voltage' )
         ax[ 1 ].set_xlabel( 'time' )
-        plt.savefig( 'Cantilever_mass_fcn.png' )
+        plt.savefig( f'Cantilever_mass_fcn_{force}.png' )
