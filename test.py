@@ -5,7 +5,7 @@ from sympy import sin, sinh, cos, cosh
 from math import pi, ceil, floor
 from scipy.optimize import root, fmin
 from scipy.integrate import solve_ivp
-import argparse
+import argparse, os
 
 def parser():
     parser = argparse.ArgumentParser()
@@ -14,6 +14,10 @@ def parser():
     return args
 
 args = parser()
+
+os.makedirs("./data/displacement", exist_ok=True)
+os.makedirs("./data/voltage", exist_ok=True)
+os.makedirs("./data/visualization", exist_ok=True)
 
 ## Unit: kg, m, s
 
@@ -253,8 +257,8 @@ for mode in range( mode_find ):
 
         print( r.y[ 0 ] )
         print( r.y[ 2 ] )
-        np.save(f"displacement_{force}.npy", r.y[0])
-        np.save(f"voltage_{force}.npy", r.y[2])
+        np.save(f"./data/displacement/displacement_{force}.npy", r.y[0])
+        np.save(f"./data/voltage/voltage_{force}.npy", r.y[2])
         figure, ax = plt.subplots( 2, 1 )
         ax[ 0 ].plot( r.t, r.y[ 0 ] * phi1_L1 * 1e3 )
         ax[ 0 ].set_ylabel( 'Displacement' )
@@ -262,4 +266,4 @@ for mode in range( mode_find ):
         ax[ 1 ].plot( r.t, r.y[ 2 ] )
         ax[ 1 ].set_ylabel( 'Voltage' )
         ax[ 1 ].set_xlabel( 'time' )
-        plt.savefig( f'Cantilever_mass_fcn_{force}.png' )
+        plt.savefig( f'./data/visualization/Cantilever_mass_fcn_{force}.png' )
