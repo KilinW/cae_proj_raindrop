@@ -5,7 +5,7 @@ from scipy.optimize import root
 import math
 from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
-import time
+import timeit
 
 class piezo_film():
     def __init__(self):
@@ -144,6 +144,7 @@ class piezo_film():
     
     def tip_mass(self, mass: float):
         self.M1 = mass
+        self.get_A1()
         
     def set_force(self, force_func):
         self.force = force_func
@@ -161,10 +162,14 @@ model = piezo_film()
 #model.tip_mass(11 * 1e-6)
 #model.set_force(lambda t: 0.08*24)     # Modify the force function to have different voltage output
 #model.time_span(0.2, 10000)
-r = model.voltage()
 
-print( r.y[ 0 ] )
-print( r.y[ 2 ] )
+r = model.voltage()
+print(timeit.timeit( model.voltage, number=1000 ))
+# time the voltage function
+
+
+#print( r.y[ 0 ] )
+#print( r.y[ 2 ] )
 figure, ax = plt.subplots( 2, 1 )
 ax[ 0 ].plot( r.t, r.y[ 0 ] * model.phi(model.L1) * 1e3 )
 ax[ 0 ].set_ylabel( 'Displacement' )
