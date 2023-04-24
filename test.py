@@ -5,6 +5,7 @@ from sympy import sin, sinh, cos, cosh
 from math import pi, ceil, floor
 from scipy.optimize import root, fmin
 from scipy.integrate import solve_ivp
+import time
 
 ## Unit: kg, m, s
 
@@ -39,7 +40,6 @@ zeta = 0.043                  ####### damping ratio
 mode_find = 1                ## how many modes to be found
 
 m1 = rho_s*b1s*h1s + rho_p*b1p*h1p
-print(m1)
 
 n = Ys * b1s / ( Yp*b1p )
 
@@ -104,7 +104,7 @@ AA = sp.Matrix( AA ).det()
 
 Cantilever_mass_det = lambda x: float(AA.subs( omega, x[0] ))
 
-guess = 2 * 2 * pi * 10
+guess = 88.54445401441941   ##2 * 2 * pi * 10
 incre = 1.1
 omega_a = np.zeros( mode_find )        ###################!!!!!!!!!!!!!改動，原為高度為一的二維陣列，改為一維
 options = { 'maxiter': 1000, 'xtol': 1e-14, 'ftol': 1e-14 }
@@ -150,6 +150,7 @@ for mode in range( mode_find ):
     CC = -AA[ 1:4, 0 ]
 
     KK = np.dot( np.linalg.inv( BB ), CC ) * A1
+    print(KK)
     B1 = KK[ 0 ]
     C1 = KK[ 1 ]
     D1 = KK[ 2 ]
@@ -158,7 +159,11 @@ for mode in range( mode_find ):
     phi1_L1 = phi1.subs( x1, L1 )
     d_phi1 = sp.diff( phi1, x1 )
 
-    mx = m1 * sp.integrate( phi1 * phi1, ( x1, 0, L1 ) ) + M1*phi1_L1*phi1_L1
+    print(time.time())
+    mx = m1 * sp.integrate( phi1 * phi1, ( x1, 0, L1 ) ) + M1*phi1_L1*phi1_L1 + d_phi1.subs( x1, L1 )**2*J1
+    print(time.time())
+    print(phi1)
+    print(mx)
 
     A1 = fmin( lambda x: abs( mx.subs( A1, x[0] ) - 1 ), x0=2 )
     A1_r[ mode ] = A1
@@ -166,27 +171,9 @@ for mode in range( mode_find ):
     B1_r[ mode ] = KK[ 0 ]
     C1_r[ mode ] = KK[ 1 ]
     D1_r[ mode ] = KK[ 2 ]
+    print(A1_r[0], B1_r[0], C1_r[0], D1_r[0])
 
 for mode in range( mode_find ):
-    omega = omega_a[ mode ]
-    alpha = alpha_a[ mode ]
-
-    A1 = A1_r[ mode ]
-    B1 = B1_r[ mode ]
-    C1 = C1_r[ mode ]
-    D1 = D1_r[ mode ]
-
-    x11 = np.arange( 0, L1, 0.001 )
-
-    x = sp.symbols( 'x' )
-    phi_1 = get_phi( x, alpha, A1, B1, C1, D1 )
-    d_phi_1 = sp.diff( phi_1, x )
-    dd_phi_1 = sp.diff( d_phi_1, x )
-
-    phi_1 = [ phi_1.subs( x, i ) for i in x11 ]
-    d_phi_1 = [ d_phi_1.subs( x, i ) for i in x11 ]
-    dd_phi_1 = [ dd_phi_1.subs( x, i ) for i in x11 ]
-
     acc = acc_g * 9.81
     for dir in range( 1 ):
         if dir == 0:
@@ -220,26 +207,30 @@ for mode in range( mode_find ):
         B1 = B1_r[ mode ]
         C1 = C1_r[ mode ]
         D1 = D1_r[ mode ]
-
+        print(A1, B1, C1, D1)
         x1 = sp.symbols( 'x' )
         phi1 = get_phi( x1, alpha, A1, B1, C1, D1 )
         phi1_L1 = phi1.subs( x1, L1 )
         d_phi1 = sp.diff( phi1, x1 )
+        print(d_phi1)
         d_phi1_Lp1 = d_phi1.subs( x1, Lp1 )
         d_phi1_Lp2 = d_phi1.subs( x1, Lp2 )
-        dd_phi1 = sp.diff( phi1, x1 )
-        dd_phi1_Lp1 = dd_phi1.subs( x1, Lp1 )
-        dddd_phi1 = sp.diff( sp.diff( dd_phi1, x1 ), x1 )
+        #dd_phi1 = sp.diff( phi1, x1 )
+        #dd_phi1_Lp1 = dd_phi1.subs( x1, Lp1 )
+        #dddd_phi1 = sp.diff( sp.diff( dd_phi1, x1 ), x1 )
 
-        mx_i[ mode ] = m1 * sp.integrate( phi1**2, ( x1, 0, L1 ) ) + M1*phi1_L1*phi1_L1
-        kx_i[ mode ] = EI1 * sp.integrate( dd_phi1**2, ( x1, 0, L1 ) )
-        kx_i_2[ mode ] = EI1 * sp.integrate( dddd_phi1 * phi1, ( x1, 0, L1 ) )
-        vphi[ mode ] = vtheta * ( d_phi1_Lp2-d_phi1_Lp1 )
-        Nr[ mode ] = m1 * sp.integrate( phi1, ( x1, 0, L1 ) ) + M1*phi1_L1
+        #mx_i[ mode ] = m1 * sp.integrate( phi1**2, ( x1, 0, L1 ) ) + M1*phi1_L1*phi1_L1
+        #kx_i[ mode ] = EI1 * sp.integrate( dd_phi1**2, ( x1, 0, L1 ) )
+        #kx_i_2[ mode ] = EI1 * sp.integrate( dddd_phi1 * phi1, ( x1, 0, L1 ) )
+        print(d_phi1_Lp1, d_phi1_Lp2)
+        vphi[ mode ] = vtheta * ( d_phi1_Lp2-d_phi1_Lp1 )       # vtheta is piezoelectronic coupling factor the chi_i in (3.1.51)
+                                                                # vtheta is piezoelectronic coupling factor the chi_i in (3.1.51)
+        #Nr[ mode ] = m1 * sp.integrate( phi1, ( x1, 0, L1 ) ) + M1*phi1_L1
 
         para = [ Cp, R, vphi[ mode ], zeta, omega, Nr[ mode ], acc, rate, freq_s_hz ]
 
-        r = solve_ivp( Cantilever_mass_fcn, [ 0, 1 ], y0=[ 0, 0, 0 ], args=[ para ], max_step=step )
+        print(para)
+        r = solve_ivp( Cantilever_mass_fcn, [ 0, 0.2 ], y0=[ 0, 0, 0 ], args=[ para ], t_eval=np.linspace( 0, 0.2, 1000 ))
 
         print( r.y[ 0 ] )
         print( r.y[ 2 ] )
@@ -250,4 +241,4 @@ for mode in range( mode_find ):
         ax[ 1 ].plot( r.t, r.y[ 2 ] )
         ax[ 1 ].set_ylabel( 'Voltage' )
         ax[ 1 ].set_xlabel( 'time' )
-        plt.savefig( 'Cantilever_mass_fcn.png' )
+        plt.savefig( 'Cantilever_mass_fcn_matlab.png' )
