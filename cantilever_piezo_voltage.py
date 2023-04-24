@@ -160,7 +160,7 @@ class piezo_film():
 model = piezo_film()
 #model.tip_mass(11 * 1e-6)
 #model.set_force(lambda t: 0.08*24)     # Modify the force function to have different voltage output
-model.time_span(0.2, 10000)
+#model.time_span(0.2, 10000)
 r = model.voltage()
 
 print( r.y[ 0 ] )
