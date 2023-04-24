@@ -164,7 +164,6 @@ model.tip_mass(11 * 1e-6)
 #model.time_span(0.2, 10000)
 
 r = model.voltage()
-print(timeit.timeit( model.voltage, number=1000 ))
 # time the voltage function
 
 
