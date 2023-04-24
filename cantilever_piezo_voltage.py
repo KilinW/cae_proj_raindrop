@@ -129,6 +129,7 @@ class piezo_film():
         return [ eta1dot, eta1ddot, v2dot ]
 
     def voltage(self):
+        get_A1()
         vphi = self.vtheta*(self.d_phi(self.Lp2) 
                             - self.d_phi(self.Lp1))
         para = [ self.Cp, self.R, vphi, self.zeta, self.alpha**2*math.sqrt(self.EI1/self.m1) ]
@@ -144,7 +145,6 @@ class piezo_film():
     
     def tip_mass(self, mass: float):
         self.M1 = mass
-        self.get_A1()
         
     def set_force(self, force_func):
         self.force = force_func
@@ -159,7 +159,7 @@ class piezo_film():
         self.vtheta = coupling
         
 model = piezo_film()
-#model.tip_mass(11 * 1e-6)
+model.tip_mass(11 * 1e-6)
 #model.set_force(lambda t: 0.08*24)     # Modify the force function to have different voltage output
 #model.time_span(0.2, 10000)
 
