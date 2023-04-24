@@ -129,7 +129,7 @@ class piezo_film():
         return [ eta1dot, eta1ddot, v2dot ]
 
     def voltage(self):
-        get_A1()
+        self.get_A1()
         vphi = self.vtheta*(self.d_phi(self.Lp2) 
                             - self.d_phi(self.Lp1))
         para = [ self.Cp, self.R, vphi, self.zeta, self.alpha**2*math.sqrt(self.EI1/self.m1) ]
