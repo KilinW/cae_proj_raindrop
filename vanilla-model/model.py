@@ -14,6 +14,10 @@ class voltageNN(torch.nn.Module):
         output = self.output(output)
         return output
     
+class voltageLSTM(torch.nn.Module):
+    def __init__(self):
+        super(voltageLSTM, self).__init__()
+        self.lstm = torch.nn.LSTM()
 model = voltageNN()
 print(model)
 dataloader = torch.utils.data.DataLoader(voltageDataset("/home/aicenter/cae_proj_raindrop/data/voltage"),
