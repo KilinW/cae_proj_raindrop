@@ -4,28 +4,44 @@ from dataset import voltageDataset
 class voltageNN(torch.nn.Module):
     def __init__(self):
         super(voltageNN, self).__init__()
-        self.input = torch.nn.Linear(1000, 100, dtype=torch.float64)
+        self.input = torch.nn.Linear(1000, 512, dtype=torch.float64)
+        self.linear1 = torch.nn.Linear(512, 256, dtype=torch.float64)
+        self.linear2 = torch.nn.Linear(256, 256, dtype=torch.float64)
+        self.linear3 = torch.nn.Linear(256, 256, dtype=torch.float64)
+        self.linear4 = torch.nn.Linear(256, 256, dtype=torch.float64)
+        self.linear5 = torch.nn.Linear(256, 256, dtype=torch.float64)
+        self.linear6 = torch.nn.Linear(256, 256, dtype=torch.float64)
+        self.linear7 = torch.nn.Linear(256, 256, dtype=torch.float64)
+        self.linear8 = torch.nn.Linear(256, 128, dtype=torch.float64)
         self.relu1 = torch.nn.ReLU()
-        self.output = torch.nn.Linear(100, 1, dtype=torch.float64)
+        self.output = torch.nn.Linear(128, 1, dtype=torch.float64)
     
     def forward(self, x):
+        
         output = self.input(x)
-        output = self.relu1(output)
+        output = self.linear1(output)
+        output = self.linear2(output)
+        output = self.linear3(output)
+        output = self.linear4(output)
+        output = self.linear5(output)
+        output = self.linear6(output)
+        output = self.linear7(output)
+        output = self.linear8(output)
         output = self.output(output)
+
         return output
     
-class voltageLSTM(torch.nn.Module):
-    def __init__(self):
-        super(voltageLSTM, self).__init__()
-        self.lstm = torch.nn.LSTM()
-model = voltageNN()
-print(model)
-dataloader = torch.utils.data.DataLoader(voltageDataset("/home/aicenter/cae_proj_raindrop/data/voltage"),
-                                         shuffle = True,
-                                         batch_size = 20,
-                                         drop_last = True)
-for idx, (x, y) in enumerate(dataloader):
-    print(idx)
-    res = model(x)
 
-    print(res-y)
+if __name__ == "__main__":
+    model = voltageNN()
+    print(model)
+    dataloader = torch.utils.data.DataLoader(voltageDataset("/home/aicenter/cae_proj_raindrop/data/voltage"),
+                                            shuffle = True,
+                                            batch_size = 1,
+                                            drop_last = True)
+    for idx, (x, y) in enumerate(dataloader):
+        if idx == 1:
+            break
+        res = model(x)
+        print(res)
+        print(y)

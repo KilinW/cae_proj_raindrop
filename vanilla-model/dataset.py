@@ -21,12 +21,15 @@ class voltageDataset(Dataset):
     def __len__(self):
         return len(self.data)
 
-dataloader = torch.utils.data.DataLoader(voltageDataset("/home/aicenter/cae_proj_raindrop/data/voltage"),
-                                         shuffle = True,
-                                         batch_size = 20,
-                                         drop_last = False)
-for idx, batch in enumerate(dataloader):
-    print(type(batch))
-    # print(batch.shape)
-    print(batch)
-    print(idx)
+if __name__ == "__main__":
+    dataloader = torch.utils.data.DataLoader(voltageDataset("/home/aicenter/cae_proj_raindrop/data/voltage"),
+                                            shuffle = True,
+                                            batch_size = 2,
+                                            drop_last = False)
+    for idx, batch in enumerate(dataloader):
+        if idx == 1:
+            break
+        print(type(batch))
+        # print(batch.shape)
+        print(batch)
+        print(idx)

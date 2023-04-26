@@ -11,12 +11,12 @@ class voltageNN(torch.nn.Module):
                                   dropout = 0,
                                   batch_first = True,
                                   bidirectional = False,
-                                  proj_size = 1, 
+                                  proj_size = 1,
                                   dtype=torch.float64)
         self.linear1 = torch.nn.Linear(1000, 100, dtype=torch.float64)
-        self.relu1 = torch.nn.ReLU()
+        self.relu1 = torch.nn.Sigmoid()
         self.linear2 = torch.nn.Linear(100, 100, dtype=torch.float64)
-        self.relu2 = torch.nn.ReLU()
+        self.relu2 = torch.nn.Sigmoid()
         self.linear3 = torch.nn.Linear(100, 100, dtype=torch.float64)
         self.relu3 = torch.nn.ReLU()
         self.linear4 = torch.nn.Linear(100, 1, dtype=torch.float64)

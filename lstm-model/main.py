@@ -12,7 +12,7 @@ epoch = 1000
 
 loss_fn = torch.nn.MSELoss()
 optimizer = torch.optim.Adam(model.parameters(),
-                             lr = 0.0005)
+                             lr = 0.05)
 scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.99)
 
 curr_loss = 100
@@ -22,7 +22,7 @@ for e in range(epoch):
         x, y = x.to("cuda"), y.to("cuda")
         pred = model(x.unsqueeze(2))
         
-        loss = loss_fn(pred, y)
+        loss = loss_fn(pred, y.unsqueeze(1))
         # print(loss)
         totalLoss.append(loss.item())
         optimizer.zero_grad()
