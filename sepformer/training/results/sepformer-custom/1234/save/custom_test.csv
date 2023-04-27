@@ -1,0 +1,2 @@
+ID,duration,mix_wav,mix_wav_format,mix_wav_opts,s1_wav,s1_wav_format,s1_wav_opts,s2_wav,s2_wav_format,s2_wav_opts,noise_wav,noise_wav_format,noise_wav_opts
+0,1.0,data/test/mixture/2.0_2.0_0.035.wav,wav,,data/test/source1/2.0_2.0_0.035.wav,wav,,data/test/source2/2.0_2.0_0.035.wav,wav,,,,
