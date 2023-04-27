@@ -2360,3 +2360,31 @@ yamllint==1.23.0
 2023-04-27 12:14:35,447 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-13-58+00
 2023-04-27 12:14:35,455 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-10-57+00
 2023-04-27 12:14:35,455 - speechbrain.utils.epoch_loop - INFO - Going into epoch 59
+2023-04-27 12:15:11,603 - speechbrain.utils.train_logger - INFO - epoch: 59, lr: 1.50e-04 - train si-snr: -2.94e+01 - valid si-snr: -2.49e+01
+2023-04-27 12:15:11,685 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-15-11+00
+2023-04-27 12:15:11,758 - speechbrain.utils.epoch_loop - INFO - Going into epoch 60
+2023-04-27 12:15:47,886 - speechbrain.utils.train_logger - INFO - epoch: 60, lr: 1.50e-04 - train si-snr: -2.89e+01 - valid si-snr: -2.42e+01
+2023-04-27 12:15:47,969 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-15-47+00
+2023-04-27 12:15:48,083 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-15-11+00
+2023-04-27 12:15:48,083 - speechbrain.utils.epoch_loop - INFO - Going into epoch 61
+2023-04-27 12:15:49,538 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "/home/gauge/git/drop_sensor/sepformer/training/train.py", line 627, in <module>
+    separator.fit(
+  File "/opt/miniconda3/envs/cae_project/lib/python3.10/site-packages/speechbrain/core.py", line 1225, in fit
+    self._fit_train(train_set=train_set, epoch=epoch, enable=enable)
+  File "/opt/miniconda3/envs/cae_project/lib/python3.10/site-packages/speechbrain/core.py", line 1078, in _fit_train
+    loss = self.fit_batch(batch)
+  File "/home/gauge/git/drop_sensor/sepformer/training/train.py", line 164, in fit_batch
+    self.optimizer.step()
+  File "/opt/miniconda3/envs/cae_project/lib/python3.10/site-packages/torch/optim/optimizer.py", line 140, in wrapper
+    out = func(*args, **kwargs)
+  File "/opt/miniconda3/envs/cae_project/lib/python3.10/site-packages/torch/optim/optimizer.py", line 23, in _use_grad
+    ret = func(self, *args, **kwargs)
+  File "/opt/miniconda3/envs/cae_project/lib/python3.10/site-packages/torch/optim/adam.py", line 234, in step
+    adam(params_with_grad,
+  File "/opt/miniconda3/envs/cae_project/lib/python3.10/site-packages/torch/optim/adam.py", line 300, in adam
+    func(params,
+  File "/opt/miniconda3/envs/cae_project/lib/python3.10/site-packages/torch/optim/adam.py", line 363, in _single_tensor_adam
+    exp_avg.mul_(beta1).add_(grad, alpha=1 - beta1)
+KeyboardInterrupt
