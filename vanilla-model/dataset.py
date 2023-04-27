@@ -11,7 +11,7 @@ class voltageDataset(Dataset):
         for file in os.listdir(self.dir):
             if file.endswith(".npy"):
                 self.data.append(np.load(os.path.join(self.dir, file)))
-                self.ans.append(float(os.path.splitext(file)[0][8:]))
+                self.ans.append(float(os.path.splitext(file)[0].split("_")[1]))
     
     def __getitem__(self, index):
         # trim as same size, since the npy file some are 1005, some are 1004
@@ -22,11 +22,24 @@ class voltageDataset(Dataset):
         return len(self.data)
 
 if __name__ == "__main__":
-    dataloader = torch.utils.data.DataLoader(voltageDataset("/home/aicenter/cae_proj_raindrop/data/voltage"),
-                                            shuffle = True,
-                                            batch_size = 2,
-                                            drop_last = False)
-    for idx, batch in enumerate(dataloader):
+    generator = torch.Generator().manual_seed(42)
+    [train, val, test] = torch.utils.data.random_split(voltageDataset("/home/aicenter/cae_proj_raindrop/new-data/voltage"),
+                                                     [3396, 425, 425],
+                                                     generator)
+    print(len(train), len(val), len(test))
+    train_dataloader = torch.utils.data.DataLoader(train,
+                                               shuffle = True,
+                                               batch_size = 32,
+                                               drop_last = True)
+    val_dataloader = torch.utils.data.DataLoader(val,
+                                                shuffle = True,
+                                                batch_size = 32,
+                                                drop_last = True)
+    test_dataloader = torch.utils.data.DataLoader(test,
+                                                shuffle = True,
+                                                batch_size = 32,
+                                                drop_last = True)
+    for idx, batch in enumerate(train_dataloader):
         if idx == 1:
             break
         print(type(batch))

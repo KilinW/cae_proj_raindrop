@@ -6,6 +6,15 @@ import math
 from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
 import timeit
+import argparse, os
+
+def parser():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--force", default=0.08 * 24, type=float)
+    parser.add_argument("-m", "--mass", default=11 * 1e-6, type=float)
+    parser.add_argument("-o", "--output", type=str, required=True)
+    args = parser.parse_args()
+    return args
 
 class piezo_film():
     def __init__(self):
@@ -158,19 +167,39 @@ class piezo_film():
     def piezo_coupling(self, coupling: float):
         self.vtheta = coupling
         
-model = piezo_film()
-model.tip_mass(11 * 1e-6)
-#model.set_force(lambda t: 0.08*24)     # Modify the force function to have different voltage output
-#model.time_span(0.2, 10000)
-r = model.voltage()
+def main(args):
 
-#print( r.y[ 0 ] )
-#print( r.y[ 2 ] )
-figure, ax = plt.subplots( 2, 1 )
-ax[ 0 ].plot( r.t, r.y[ 0 ] * model.phi(model.L1) * 1e3 )
-ax[ 0 ].set_ylabel( 'Displacement' )
-ax[ 0 ].set_xlabel( 'time' )
-ax[ 1 ].plot( r.t, r.y[ 2 ] )
-ax[ 1 ].set_ylabel( 'Voltage' )
-ax[ 1 ].set_xlabel( 'time' )
-plt.savefig( 'Cantilever_mass_fcn_python.png' )
+    os.makedirs(os.path.join(args.output, "displacement"), exist_ok=True)
+    os.makedirs(os.path.join(args.output, "voltage"), exist_ok=True)
+    os.makedirs(os.path.join(args.output, "visualization"), exist_ok=True)
+
+    model = piezo_film()
+    model.tip_mass(args.mass)
+    model.set_force(lambda t: args.force)     # Modify the force function to have different voltage output
+    #model.time_span(0.2, 10000)
+    r = model.voltage()
+
+    # print( len(r.y[ 0 ]) ) # len == 1000
+    #print( r.y[ 0 ] )
+    #print( r.y[ 2 ] )
+    np.save(os.path.join(args.output, 
+                         "displacement", 
+                         f"displacement_{args.force}_{args.mass}.npy"), r.y[0] * model.phi(model.L1) * 1e3 )
+    np.save(os.path.join(args.output, 
+                         "voltage", 
+                         f"voltage_{args.force}_{args.mass}.npy"), r.y[2])
+
+    figure, ax = plt.subplots( 2, 1 )
+    ax[ 0 ].plot( r.t, r.y[ 0 ] * model.phi(model.L1) * 1e3 )
+    ax[ 0 ].set_ylabel( 'Displacement' )
+    ax[ 0 ].set_xlabel( 'time' )
+    ax[ 1 ].plot( r.t, r.y[ 2 ] )
+    ax[ 1 ].set_ylabel( 'Voltage' )
+    ax[ 1 ].set_xlabel( 'time' )
+    plt.savefig( os.path.join(args.output, 
+                              "visualization", 
+                              f'Cantilever_mass_fcn_{args.force}_{args.mass}.png') )
+
+if __name__ == "__main__":
+    args = parser()
+    main(args)
