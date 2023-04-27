@@ -2303,3 +2303,60 @@ yamllint==1.23.0
 2023-04-27 12:06:06,909 - speechbrain.utils.train_logger - INFO - epoch: 44, lr: 1.50e-04 - train si-snr: -2.73e+01 - valid si-snr: -2.18e+01
 2023-04-27 12:06:06,992 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-06-06+00
 2023-04-27 12:06:07,047 - speechbrain.utils.epoch_loop - INFO - Going into epoch 45
+2023-04-27 12:06:43,148 - speechbrain.utils.train_logger - INFO - epoch: 45, lr: 1.50e-04 - train si-snr: -2.71e+01 - valid si-snr: -2.33e+01
+2023-04-27 12:06:43,233 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-06-43+00
+2023-04-27 12:06:43,326 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-06-06+00
+2023-04-27 12:06:43,327 - speechbrain.utils.epoch_loop - INFO - Going into epoch 46
+2023-04-27 12:07:19,450 - speechbrain.utils.train_logger - INFO - epoch: 46, lr: 1.50e-04 - train si-snr: -2.69e+01 - valid si-snr: -2.24e+01
+2023-04-27 12:07:19,533 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-07-19+00
+2023-04-27 12:07:19,624 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-06-43+00
+2023-04-27 12:07:19,625 - speechbrain.utils.epoch_loop - INFO - Going into epoch 47
+2023-04-27 12:07:55,778 - speechbrain.utils.train_logger - INFO - epoch: 47, lr: 1.50e-04 - train si-snr: -2.81e+01 - valid si-snr: -2.39e+01
+2023-04-27 12:07:55,859 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-07-55+00
+2023-04-27 12:07:55,951 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-07-19+00
+2023-04-27 12:07:55,958 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-05-30+00
+2023-04-27 12:07:55,958 - speechbrain.utils.epoch_loop - INFO - Going into epoch 48
+2023-04-27 12:08:32,123 - speechbrain.utils.train_logger - INFO - epoch: 48, lr: 1.50e-04 - train si-snr: -2.78e+01 - valid si-snr: -2.38e+01
+2023-04-27 12:08:32,209 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-08-32+00
+2023-04-27 12:08:32,269 - speechbrain.utils.epoch_loop - INFO - Going into epoch 49
+2023-04-27 12:09:08,409 - speechbrain.utils.train_logger - INFO - epoch: 49, lr: 1.50e-04 - train si-snr: -2.77e+01 - valid si-snr: -2.02e+01
+2023-04-27 12:09:08,491 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-09-08+00
+2023-04-27 12:09:08,588 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-08-32+00
+2023-04-27 12:09:08,589 - speechbrain.utils.epoch_loop - INFO - Going into epoch 50
+2023-04-27 12:09:44,723 - speechbrain.utils.train_logger - INFO - epoch: 50, lr: 1.50e-04 - train si-snr: -2.83e+01 - valid si-snr: -2.35e+01
+2023-04-27 12:09:44,809 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-09-44+00
+2023-04-27 12:09:44,906 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-09-08+00
+2023-04-27 12:09:44,906 - speechbrain.utils.epoch_loop - INFO - Going into epoch 51
+2023-04-27 12:10:21,050 - speechbrain.utils.train_logger - INFO - epoch: 51, lr: 1.50e-04 - train si-snr: -2.85e+01 - valid si-snr: -2.36e+01
+2023-04-27 12:10:21,135 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-10-21+00
+2023-04-27 12:10:21,237 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-09-44+00
+2023-04-27 12:10:21,237 - speechbrain.utils.epoch_loop - INFO - Going into epoch 52
+2023-04-27 12:10:57,386 - speechbrain.utils.train_logger - INFO - epoch: 52, lr: 1.50e-04 - train si-snr: -2.91e+01 - valid si-snr: -2.40e+01
+2023-04-27 12:10:57,471 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-10-57+00
+2023-04-27 12:10:57,573 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-10-21+00
+2023-04-27 12:10:57,580 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-07-55+00
+2023-04-27 12:10:57,580 - speechbrain.utils.epoch_loop - INFO - Going into epoch 53
+2023-04-27 12:11:33,746 - speechbrain.utils.train_logger - INFO - epoch: 53, lr: 1.50e-04 - train si-snr: -2.83e+01 - valid si-snr: -2.27e+01
+2023-04-27 12:11:33,836 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-11-33+00
+2023-04-27 12:11:33,905 - speechbrain.utils.epoch_loop - INFO - Going into epoch 54
+2023-04-27 12:12:10,026 - speechbrain.utils.train_logger - INFO - epoch: 54, lr: 1.50e-04 - train si-snr: -2.89e+01 - valid si-snr: -2.13e+01
+2023-04-27 12:12:10,116 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-12-10+00
+2023-04-27 12:12:10,223 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-11-33+00
+2023-04-27 12:12:10,223 - speechbrain.utils.epoch_loop - INFO - Going into epoch 55
+2023-04-27 12:12:46,359 - speechbrain.utils.train_logger - INFO - epoch: 55, lr: 1.50e-04 - train si-snr: -2.89e+01 - valid si-snr: -2.14e+01
+2023-04-27 12:12:46,447 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-12-46+00
+2023-04-27 12:12:46,556 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-12-10+00
+2023-04-27 12:12:46,556 - speechbrain.utils.epoch_loop - INFO - Going into epoch 56
+2023-04-27 12:13:22,654 - speechbrain.utils.train_logger - INFO - epoch: 56, lr: 1.50e-04 - train si-snr: -2.91e+01 - valid si-snr: -2.23e+01
+2023-04-27 12:13:22,737 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-13-22+00
+2023-04-27 12:13:22,844 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-12-46+00
+2023-04-27 12:13:22,844 - speechbrain.utils.epoch_loop - INFO - Going into epoch 57
+2023-04-27 12:13:58,943 - speechbrain.utils.train_logger - INFO - epoch: 57, lr: 1.50e-04 - train si-snr: -2.88e+01 - valid si-snr: -2.32e+01
+2023-04-27 12:13:59,027 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-13-58+00
+2023-04-27 12:13:59,138 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-13-22+00
+2023-04-27 12:13:59,138 - speechbrain.utils.epoch_loop - INFO - Going into epoch 58
+2023-04-27 12:14:35,253 - speechbrain.utils.train_logger - INFO - epoch: 58, lr: 1.50e-04 - train si-snr: -2.91e+01 - valid si-snr: -2.58e+01
+2023-04-27 12:14:35,335 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-14-35+00
+2023-04-27 12:14:35,447 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-13-58+00
+2023-04-27 12:14:35,455 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-04-27+12-10-57+00
+2023-04-27 12:14:35,455 - speechbrain.utils.epoch_loop - INFO - Going into epoch 59
