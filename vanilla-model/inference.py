@@ -9,7 +9,7 @@ model = voltageNN()
 model.load_state_dict(torch.load("/home/aicenter/cae_proj_raindrop/vanilla-model/result/best_model.pth"))
 model.eval()
 
-input_file = "voltage_1.38.npy"
+input_file = "voltage_3.88.npy"
 input_path = os.path.join("/home/aicenter/cae_proj_raindrop/data/voltage", input_file)
 input = torch.tensor(np.load(input_path)[:1000])
 output = float(os.path.splitext(input_file)[0][8:])
