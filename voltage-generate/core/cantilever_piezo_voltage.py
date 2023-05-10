@@ -130,7 +130,7 @@ class piezo_film():
         v2dot = -1 / ( Cp*R ) * v2 + vphi/Cp*eta1dot
 
         return [ eta1dot, eta1ddot, v2dot ]
-
+    
     def voltage(self):
         vphi = self.vtheta*(self.d_phi(self.Lp2) 
                             - self.d_phi(self.Lp1))
@@ -139,7 +139,7 @@ class piezo_film():
                          [ 0, self.time_end ], 
                          [ 0, 0, 0 ], 
                          args=[ para ], 
-                         t_eval=np.linspace( 0, self.time_end, self.time_step ) )
+                         t_eval=np.linspace( 0, self.time_end, self.time_step ) ) # type: ignore
     
     def time_span(self, time_span: float, step: float=1000):
         self.time_end = time_span
