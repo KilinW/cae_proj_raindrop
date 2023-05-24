@@ -42,7 +42,7 @@ sample_rate: 16000
 
 # Training parameters
 N_epochs: 200
-batch_size: 64
+batch_size: 32
 lr: 0.00015
 clip_grad_norm: 5
 loss_upper_lim: 999999  # this is the upper limit for an acceptable loss
@@ -50,7 +50,7 @@ loss_upper_lim: 999999  # this is the upper limit for an acceptable loss
 limit_training_signal_len: False
 # this is the length of sequences if we choose to limit
 # the signal length of training sequences
-training_signal_len: 32000
+training_signal_len: 16000
 
 # Set it to True to dynamically create mixtures at training time
 dynamic_mixing: False
@@ -80,10 +80,10 @@ threshold_byloss: True
 threshold: -30
 
 # Encoder parameters
-N_encoder_out: 128
-out_channels: 128
-kernel_size: 16
-kernel_stride: 8
+N_encoder_out: 256
+out_channels: 256
+kernel_size: 128
+kernel_stride: 64
 
 # Dataloader options
 # Set num_workers: 0 on MacOS due to behavior of the multiprocessing library
@@ -99,19 +99,19 @@ Encoder: !new:speechbrain.lobes.models.dual_path.Encoder
 
 
 SBtfintra: !new:speechbrain.lobes.models.dual_path.SBTransformerBlock
-    num_layers: 2
+    num_layers: 4
     d_model: !ref <out_channels>
-    nhead: 4
-    d_ffn: 512
+    nhead: 8
+    d_ffn: 1024
     dropout: 0
     use_positional_encoding: True
     norm_before: True
 
 SBtfinter: !new:speechbrain.lobes.models.dual_path.SBTransformerBlock
-    num_layers: 2
+    num_layers: 4
     d_model: !ref <out_channels>
-    nhead: 4
-    d_ffn: 512
+    nhead: 8
+    d_ffn: 1024
     dropout: 0
     use_positional_encoding: True
     norm_before: True
