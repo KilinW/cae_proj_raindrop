@@ -161,3 +161,4 @@ cython_debug/
 
 # Ignore model checkpoint file
 *.ckpt
+data_123456789/

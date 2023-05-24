@@ -42,7 +42,7 @@ sample_rate: 16000
 
 # Training parameters
 N_epochs: 200
-batch_size: 0.1
+batch_size: 64
 lr: 0.00015
 clip_grad_norm: 5
 loss_upper_lim: 999999  # this is the upper limit for an acceptable loss
@@ -80,8 +80,8 @@ threshold_byloss: True
 threshold: -30
 
 # Encoder parameters
-N_encoder_out: 256
-out_channels: 256
+N_encoder_out: 128
+out_channels: 128
 kernel_size: 16
 kernel_stride: 8
 
@@ -99,19 +99,19 @@ Encoder: !new:speechbrain.lobes.models.dual_path.Encoder
 
 
 SBtfintra: !new:speechbrain.lobes.models.dual_path.SBTransformerBlock
-    num_layers: 4
+    num_layers: 2
     d_model: !ref <out_channels>
-    nhead: 8
-    d_ffn: 1024
+    nhead: 4
+    d_ffn: 512
     dropout: 0
     use_positional_encoding: True
     norm_before: True
 
 SBtfinter: !new:speechbrain.lobes.models.dual_path.SBTransformerBlock
-    num_layers: 4
+    num_layers: 2
     d_model: !ref <out_channels>
-    nhead: 8
-    d_ffn: 1024
+    nhead: 4
+    d_ffn: 512
     dropout: 0
     use_positional_encoding: True
     norm_before: True

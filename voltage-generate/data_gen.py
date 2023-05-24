@@ -13,8 +13,8 @@ seed = 123456789
 np.random.seed(seed)
 
 base_folder = f"data_{seed}"
-subfolders = ["train", "test", "validation"]
-inner_folders = ["mix", "s1", "s2"]
+subfolders = ["train", "test", "valid"]
+inner_folders = ["mixture", "source1", "source2"]
 
 # Create the folder structure
 for subfolder in subfolders:
@@ -58,4 +58,3 @@ for time_diffs in np.arange(0.001, 0.1, 0.001):
 ## Make a copy of current setting to data folder
 shutil.copy('data_gen.py', f'data_{seed}/data_gen.py')
 shutil.copytree('core', f'data_{seed}/core')
-            

@@ -1,0 +1,38 @@
+Directory 'data_123456789/train/mixture' created.
+Directory 'data_123456789/train/source1' created.
+Directory 'data_123456789/train/source2' created.
+Directory 'data_123456789/test/mixture' created.
+Directory 'data_123456789/test/source1' created.
+Directory 'data_123456789/test/source2' created.
+Directory 'data_123456789/valid/mixture' created.
+Directory 'data_123456789/valid/source1' created.
+Directory 'data_123456789/valid/source2' created.
+Traceback (most recent call last):
+  File "/home/kilin/cae_proj_raindrop/voltage-generate/data_gen.py", line 51, in <module>
+    r = model.voltage()
+  File "/home/kilin/cae_proj_raindrop/voltage-generate/core/cantilever_piezo_voltage.py", line 137, in voltage
+    return solve_ivp( self.cantilever_actuator_eq_solver, 
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/scipy/integrate/_ivp/ivp.py", line 591, in solve_ivp
+    message = solver.step()
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/scipy/integrate/_ivp/base.py", line 181, in step
+    success, message = self._step_impl()
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/scipy/integrate/_ivp/rk.py", line 144, in _step_impl
+    y_new, f_new = rk_step(self.fun, t, y, self.f, h, self.A,
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/scipy/integrate/_ivp/rk.py", line 67, in rk_step
+    f_new = fun(t + h, y_new)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/scipy/integrate/_ivp/base.py", line 138, in fun
+    return self.fun_single(t, y)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/scipy/integrate/_ivp/base.py", line 20, in fun_wrapped
+    return np.asarray(fun(t, y), dtype=dtype)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/scipy/integrate/_ivp/ivp.py", line 529, in <lambda>
+    fun = lambda t, x, fun=fun: fun(t, x, *args)
+KeyboardInterrupt
+Directory 'data_123456789/train/mixture' created.
+Directory 'data_123456789/train/source1' created.
+Directory 'data_123456789/train/source2' created.
+Directory 'data_123456789/test/mixture' created.
+Directory 'data_123456789/test/source1' created.
+Directory 'data_123456789/test/source2' created.
+Directory 'data_123456789/valid/mixture' created.
+Directory 'data_123456789/valid/source1' created.
+Directory 'data_123456789/valid/source2' created.

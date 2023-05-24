@@ -4,7 +4,6 @@ import numpy as np
 from scipy.optimize import root
 import math
 from scipy.integrate import solve_ivp
-import matplotlib.pyplot as plt
 import timeit
 
 class piezo_film():
@@ -160,23 +159,3 @@ class piezo_film():
     def piezo_coupling(self, coupling: float):
         self.vtheta = coupling
         
-
-if __name__ == "__main__":
-    model = piezo_film()
-    ######################## Set your model parameters here ############################
-    #model.tip_mass(0)
-    model.set_force(lambda t: 0.08*24 if t <0.0001 else 0)     # Modify the force function to have different voltage output
-    model.time_span(0.1, 100000)
-    ####################################################################################
-    r = model.voltage()
-
-    #print( r.y[ 0 ] )
-    #print( r.y[ 2 ] )
-    figure, ax = plt.subplots( 2, 1 )
-    ax[ 0 ].plot( r.t, r.y[ 0 ] * model.phi(model.L1) * 1e3 )
-    ax[ 0 ].set_ylabel( 'Displacement' )
-    ax[ 0 ].set_xlabel( 'time' )
-    ax[ 1 ].plot( r.t, r.y[ 2 ] )
-    ax[ 1 ].set_ylabel( 'Voltage' )
-    ax[ 1 ].set_xlabel( 'time' )
-    plt.savefig( './Cantilever_mass_fcn_python.png' )

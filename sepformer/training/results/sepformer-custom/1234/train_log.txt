@@ -1,0 +1,4 @@
+epoch: 1, lr: 1.50e-04 - train si-snr: -1.36e+01 - valid si-snr: -1.82e+01
+epoch: 2, lr: 1.50e-04 - train si-snr: -1.65e+01 - valid si-snr: -2.02e+01
+epoch: 3, lr: 1.50e-04 - train si-snr: -1.89e+01 - valid si-snr: -2.43e+01
+epoch: 4, lr: 1.50e-04 - train si-snr: -2.13e+01 - valid si-snr: -2.74e+01

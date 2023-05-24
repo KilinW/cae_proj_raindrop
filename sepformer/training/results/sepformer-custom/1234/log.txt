@@ -1,0 +1,1583 @@
+2023-05-10 21:34:07,355 - speechbrain.core - INFO - Beginning experiment!
+2023-05-10 21:34:07,355 - speechbrain.core - INFO - Experiment folder: results/sepformer-custom/1234
+2023-05-10 21:34:07,618 - speechbrain.utils.superpowers - DEBUG - appdirs==1.4.4
+attrs==23.1.0
+audioread==3.0.0
+black==19.10b0
+brotlipy==0.7.0
+certifi @ file:///croot/certifi_1671487769961/work/certifi
+cffi @ file:///croot/cffi_1670423208954/work
+cfgv==3.3.1
+chardet==5.1.0
+charset-normalizer==3.1.0
+click==8.0.4
+cryptography @ file:///croot/cryptography_1677533068310/work
+decorator==5.1.1
+distlib==0.3.6
+entrypoints==0.3
+filelock==3.12.0
+flake8==3.7.9
+flit_core @ file:///opt/conda/conda-bld/flit-core_1644941570762/work/source/flit_core
+future==0.18.3
+gmpy2 @ file:///tmp/build/80754af9/gmpy2_1645455533097/work
+huggingface-hub==0.13.3
+HyperPyYAML==1.1.0
+identify==2.5.22
+idna @ file:///croot/idna_1666125576474/work
+Jinja2 @ file:///croot/jinja2_1666908132255/work
+joblib==1.2.0
+lazy_loader==0.1
+librosa==0.10.0.post2
+llvmlite==0.39.1
+MarkupSafe @ file:///opt/conda/conda-bld/markupsafe_1654597864307/work
+mccabe==0.6.1
+mir-eval==0.7
+mkl-fft==1.3.1
+mkl-random @ file:///home/builder/ci_310/mkl_random_1641843545607/work
+mkl-service==2.4.0
+more-itertools==9.1.0
+mpmath==1.2.1
+msgpack==1.0.5
+networkx @ file:///croot/networkx_1678964333703/work
+nodeenv==1.7.0
+numba==0.56.4
+numpy @ file:///croot/numpy_and_numpy_base_1672336185480/work
+packaging @ file:///croot/packaging_1678965309396/work
+pathspec==0.11.1
+Pillow==9.4.0
+platformdirs==3.2.0
+pluggy==0.13.1
+pooch==1.6.0
+pre-commit==3.2.2
+py==1.11.0
+pycodestyle==2.5.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyflakes==2.1.1
+pyOpenSSL @ file:///croot/pyopenssl_1677607685877/work
+PySocks @ file:///home/builder/ci_310/pysocks_1640793678128/work
+pytest==5.4.1
+PyYAML==6.0
+regex==2023.3.23
+requests==2.28.2
+ruamel.yaml==0.17.21
+ruamel.yaml.clib==0.2.7
+scikit-learn==1.2.2
+scipy==1.10.1
+sentencepiece==0.1.97
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+soundfile==0.12.1
+soxr==0.3.4
+-e git+https://github.com/speechbrain/speechbrain.git@beec862238c4c2ccfcb20d9ca592b671673ee6af#egg=speechbrain
+sympy @ file:///croot/sympy_1668202399572/work
+threadpoolctl==3.1.0
+toml==0.10.2
+torch==2.0.0
+torchaudio==2.0.0
+torchvision==0.15.0
+tqdm==4.65.0
+triton==2.0.0
+typed-ast==1.5.4
+typing_extensions==4.5.0
+urllib3==1.26.15
+virtualenv==20.22.0
+wcwidth==0.2.6
+yamllint==1.23.0
+
+
+2023-05-10 21:34:07,620 - speechbrain.utils.superpowers - DEBUG - 69c8a82
+
+
+2023-05-10 21:34:08,484 - speechbrain.core - INFO - Info: auto_mix_prec arg from hparam file is used
+2023-05-10 21:34:08,484 - speechbrain.core - INFO - Info: noprogressbar arg from hparam file is used
+2023-05-10 21:34:09,449 - speechbrain.core - INFO - 6.7M trainable parameters in Separation
+2023-05-10 21:34:09,606 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 627, in <module>
+    separator.fit(
+  File "/home/kilin/speechbrain/speechbrain/core.py", line 1183, in fit
+    train_set = self.make_dataloader(
+  File "/home/kilin/speechbrain/speechbrain/core.py", line 732, in make_dataloader
+    dataloader = sb.dataio.dataloader.make_dataloader(
+  File "/home/kilin/speechbrain/speechbrain/dataio/dataloader.py", line 138, in make_dataloader
+    dataloader = SaveableDataLoader(dataset, **loader_kwargs)
+  File "/home/kilin/speechbrain/speechbrain/dataio/dataloader.py", line 212, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 357, in __init__
+    batch_sampler = BatchSampler(sampler, batch_size, drop_last)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/utils/data/sampler.py", line 232, in __init__
+    raise ValueError("batch_size should be a positive integer value, "
+ValueError: batch_size should be a positive integer value, but got batch_size=0.1
+2023-05-10 21:36:07,805 - speechbrain.core - INFO - Beginning experiment!
+2023-05-10 21:36:07,805 - speechbrain.core - INFO - Experiment folder: results/sepformer-custom/1234
+2023-05-10 21:36:08,018 - speechbrain.utils.superpowers - DEBUG - appdirs==1.4.4
+attrs==23.1.0
+audioread==3.0.0
+black==19.10b0
+brotlipy==0.7.0
+certifi @ file:///croot/certifi_1671487769961/work/certifi
+cffi @ file:///croot/cffi_1670423208954/work
+cfgv==3.3.1
+chardet==5.1.0
+charset-normalizer==3.1.0
+click==8.0.4
+cryptography @ file:///croot/cryptography_1677533068310/work
+decorator==5.1.1
+distlib==0.3.6
+entrypoints==0.3
+filelock==3.12.0
+flake8==3.7.9
+flit_core @ file:///opt/conda/conda-bld/flit-core_1644941570762/work/source/flit_core
+future==0.18.3
+gmpy2 @ file:///tmp/build/80754af9/gmpy2_1645455533097/work
+huggingface-hub==0.13.3
+HyperPyYAML==1.1.0
+identify==2.5.22
+idna @ file:///croot/idna_1666125576474/work
+Jinja2 @ file:///croot/jinja2_1666908132255/work
+joblib==1.2.0
+lazy_loader==0.1
+librosa==0.10.0.post2
+llvmlite==0.39.1
+MarkupSafe @ file:///opt/conda/conda-bld/markupsafe_1654597864307/work
+mccabe==0.6.1
+mir-eval==0.7
+mkl-fft==1.3.1
+mkl-random @ file:///home/builder/ci_310/mkl_random_1641843545607/work
+mkl-service==2.4.0
+more-itertools==9.1.0
+mpmath==1.2.1
+msgpack==1.0.5
+networkx @ file:///croot/networkx_1678964333703/work
+nodeenv==1.7.0
+numba==0.56.4
+numpy @ file:///croot/numpy_and_numpy_base_1672336185480/work
+packaging @ file:///croot/packaging_1678965309396/work
+pathspec==0.11.1
+Pillow==9.4.0
+platformdirs==3.2.0
+pluggy==0.13.1
+pooch==1.6.0
+pre-commit==3.2.2
+py==1.11.0
+pycodestyle==2.5.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyflakes==2.1.1
+pyOpenSSL @ file:///croot/pyopenssl_1677607685877/work
+PySocks @ file:///home/builder/ci_310/pysocks_1640793678128/work
+pytest==5.4.1
+PyYAML==6.0
+regex==2023.3.23
+requests==2.28.2
+ruamel.yaml==0.17.21
+ruamel.yaml.clib==0.2.7
+scikit-learn==1.2.2
+scipy==1.10.1
+sentencepiece==0.1.97
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+soundfile==0.12.1
+soxr==0.3.4
+-e git+https://github.com/speechbrain/speechbrain.git@beec862238c4c2ccfcb20d9ca592b671673ee6af#egg=speechbrain
+sympy @ file:///croot/sympy_1668202399572/work
+threadpoolctl==3.1.0
+toml==0.10.2
+torch==2.0.0
+torchaudio==2.0.0
+torchvision==0.15.0
+tqdm==4.65.0
+triton==2.0.0
+typed-ast==1.5.4
+typing_extensions==4.5.0
+urllib3==1.26.15
+virtualenv==20.22.0
+wcwidth==0.2.6
+yamllint==1.23.0
+
+
+2023-05-10 21:36:08,019 - speechbrain.utils.superpowers - DEBUG - 69c8a82
+
+
+2023-05-10 21:36:08,872 - speechbrain.core - INFO - Info: auto_mix_prec arg from hparam file is used
+2023-05-10 21:36:08,872 - speechbrain.core - INFO - Info: noprogressbar arg from hparam file is used
+2023-05-10 21:36:09,447 - speechbrain.core - INFO - 6.7M trainable parameters in Separation
+2023-05-10 21:36:09,604 - speechbrain.utils.checkpoints - INFO - Would load a checkpoint here, but none found yet.
+2023-05-10 21:36:09,604 - speechbrain.utils.epoch_loop - INFO - Going into epoch 1
+2023-05-10 21:36:11,216 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 627, in <module>
+    separator.fit(
+  File "/home/kilin/speechbrain/speechbrain/core.py", line 1207, in fit
+    self._fit_train(train_set=train_set, epoch=epoch, enable=enable)
+  File "/home/kilin/speechbrain/speechbrain/core.py", line 1060, in _fit_train
+    loss = self.fit_batch(batch)
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 143, in fit_batch
+    predictions, targets = self.compute_forward(
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 71, in compute_forward
+    est_mask = self.hparams.MaskNet(mix_w)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 1024, in forward
+    x = self.dual_mdl[i](x)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 854, in forward
+    intra = self.intra_mdl(intra)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 600, in forward
+    return self.mdl(x + pos_enc)[0]
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/transformer/Transformer.py", line 477, in forward
+    output, attention = enc_layer(
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/transformer/Transformer.py", line 349, in forward
+    output, self_attn = self.self_att(
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/nnet/attention.py", line 762, in forward
+    output = self.att(
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 1189, in forward
+    attn_output, attn_output_weights = F.multi_head_attention_forward(
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/functional.py", line 5300, in multi_head_attention_forward
+    attn_output_weights = softmax(attn_output_weights, dim=-1)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/functional.py", line 1843, in softmax
+    ret = input.softmax(dim)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 8.58 GiB (GPU 0; 23.69 GiB total capacity; 21.75 GiB already allocated; 496.94 MiB free; 21.88 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+2023-05-10 22:12:39,025 - speechbrain.core - INFO - Beginning experiment!
+2023-05-10 22:12:39,025 - speechbrain.core - INFO - Experiment folder: results/sepformer-custom/1234
+2023-05-10 22:12:39,254 - speechbrain.utils.superpowers - DEBUG - appdirs==1.4.4
+attrs==23.1.0
+audioread==3.0.0
+black==19.10b0
+brotlipy==0.7.0
+certifi @ file:///croot/certifi_1671487769961/work/certifi
+cffi @ file:///croot/cffi_1670423208954/work
+cfgv==3.3.1
+chardet==5.1.0
+charset-normalizer==3.1.0
+click==8.0.4
+cryptography @ file:///croot/cryptography_1677533068310/work
+decorator==5.1.1
+distlib==0.3.6
+entrypoints==0.3
+filelock==3.12.0
+flake8==3.7.9
+flit_core @ file:///opt/conda/conda-bld/flit-core_1644941570762/work/source/flit_core
+future==0.18.3
+gmpy2 @ file:///tmp/build/80754af9/gmpy2_1645455533097/work
+huggingface-hub==0.13.3
+HyperPyYAML==1.1.0
+identify==2.5.22
+idna @ file:///croot/idna_1666125576474/work
+Jinja2 @ file:///croot/jinja2_1666908132255/work
+joblib==1.2.0
+lazy_loader==0.1
+librosa==0.10.0.post2
+llvmlite==0.39.1
+MarkupSafe @ file:///opt/conda/conda-bld/markupsafe_1654597864307/work
+mccabe==0.6.1
+mir-eval==0.7
+mkl-fft==1.3.1
+mkl-random @ file:///home/builder/ci_310/mkl_random_1641843545607/work
+mkl-service==2.4.0
+more-itertools==9.1.0
+mpmath==1.2.1
+msgpack==1.0.5
+networkx @ file:///croot/networkx_1678964333703/work
+nodeenv==1.7.0
+numba==0.56.4
+numpy @ file:///croot/numpy_and_numpy_base_1672336185480/work
+packaging @ file:///croot/packaging_1678965309396/work
+pathspec==0.11.1
+Pillow==9.4.0
+platformdirs==3.2.0
+pluggy==0.13.1
+pooch==1.6.0
+pre-commit==3.2.2
+py==1.11.0
+pycodestyle==2.5.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyflakes==2.1.1
+pyOpenSSL @ file:///croot/pyopenssl_1677607685877/work
+PySocks @ file:///home/builder/ci_310/pysocks_1640793678128/work
+pytest==5.4.1
+PyYAML==6.0
+regex==2023.3.23
+requests==2.28.2
+ruamel.yaml==0.17.21
+ruamel.yaml.clib==0.2.7
+scikit-learn==1.2.2
+scipy==1.10.1
+sentencepiece==0.1.97
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+soundfile==0.12.1
+soxr==0.3.4
+-e git+https://github.com/speechbrain/speechbrain.git@beec862238c4c2ccfcb20d9ca592b671673ee6af#egg=speechbrain
+sympy @ file:///croot/sympy_1668202399572/work
+threadpoolctl==3.1.0
+toml==0.10.2
+torch==2.0.0
+torchaudio==2.0.0
+torchvision==0.15.0
+tqdm==4.65.0
+triton==2.0.0
+typed-ast==1.5.4
+typing_extensions==4.5.0
+urllib3==1.26.15
+virtualenv==20.22.0
+wcwidth==0.2.6
+yamllint==1.23.0
+
+
+2023-05-10 22:12:39,255 - speechbrain.utils.superpowers - DEBUG - 69c8a82
+
+
+2023-05-10 22:12:40,134 - speechbrain.core - INFO - Info: auto_mix_prec arg from hparam file is used
+2023-05-10 22:12:40,134 - speechbrain.core - INFO - Info: noprogressbar arg from hparam file is used
+2023-05-10 22:12:40,720 - speechbrain.core - INFO - 6.7M trainable parameters in Separation
+2023-05-10 22:12:40,883 - speechbrain.utils.checkpoints - INFO - Would load a checkpoint here, but none found yet.
+2023-05-10 22:12:40,883 - speechbrain.utils.epoch_loop - INFO - Going into epoch 1
+2023-05-10 22:12:41,964 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 627, in <module>
+    separator.fit(
+  File "/home/kilin/speechbrain/speechbrain/core.py", line 1207, in fit
+    self._fit_train(train_set=train_set, epoch=epoch, enable=enable)
+  File "/home/kilin/speechbrain/speechbrain/core.py", line 1060, in _fit_train
+    loss = self.fit_batch(batch)
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 143, in fit_batch
+    predictions, targets = self.compute_forward(
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 71, in compute_forward
+    est_mask = self.hparams.MaskNet(mix_w)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 1035, in forward
+    x = self._over_add(x, gap)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 1145, in _over_add
+    input2 = input[:, :, :, K:].contiguous().view(B, N, -1)[:, :, :-P]
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 142.00 MiB (GPU 0; 23.69 GiB total capacity; 21.68 GiB already allocated; 48.94 MiB free; 22.31 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+2023-05-10 22:37:43,207 - speechbrain.core - INFO - Beginning experiment!
+2023-05-10 22:37:43,207 - speechbrain.core - INFO - Experiment folder: results/sepformer-custom/1234
+2023-05-10 22:37:43,428 - speechbrain.utils.superpowers - DEBUG - appdirs==1.4.4
+attrs==23.1.0
+audioread==3.0.0
+black==19.10b0
+brotlipy==0.7.0
+certifi @ file:///croot/certifi_1671487769961/work/certifi
+cffi @ file:///croot/cffi_1670423208954/work
+cfgv==3.3.1
+chardet==5.1.0
+charset-normalizer==3.1.0
+click==8.0.4
+cryptography @ file:///croot/cryptography_1677533068310/work
+decorator==5.1.1
+distlib==0.3.6
+entrypoints==0.3
+filelock==3.12.0
+flake8==3.7.9
+flit_core @ file:///opt/conda/conda-bld/flit-core_1644941570762/work/source/flit_core
+future==0.18.3
+gmpy2 @ file:///tmp/build/80754af9/gmpy2_1645455533097/work
+huggingface-hub==0.13.3
+HyperPyYAML==1.1.0
+identify==2.5.22
+idna @ file:///croot/idna_1666125576474/work
+Jinja2 @ file:///croot/jinja2_1666908132255/work
+joblib==1.2.0
+lazy_loader==0.1
+librosa==0.10.0.post2
+llvmlite==0.39.1
+MarkupSafe @ file:///opt/conda/conda-bld/markupsafe_1654597864307/work
+mccabe==0.6.1
+mir-eval==0.7
+mkl-fft==1.3.1
+mkl-random @ file:///home/builder/ci_310/mkl_random_1641843545607/work
+mkl-service==2.4.0
+more-itertools==9.1.0
+mpmath==1.2.1
+msgpack==1.0.5
+networkx @ file:///croot/networkx_1678964333703/work
+nodeenv==1.7.0
+numba==0.56.4
+numpy @ file:///croot/numpy_and_numpy_base_1672336185480/work
+packaging @ file:///croot/packaging_1678965309396/work
+pathspec==0.11.1
+Pillow==9.4.0
+platformdirs==3.2.0
+pluggy==0.13.1
+pooch==1.6.0
+pre-commit==3.2.2
+py==1.11.0
+pycodestyle==2.5.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyflakes==2.1.1
+pyOpenSSL @ file:///croot/pyopenssl_1677607685877/work
+PySocks @ file:///home/builder/ci_310/pysocks_1640793678128/work
+pytest==5.4.1
+PyYAML==6.0
+regex==2023.3.23
+requests==2.28.2
+ruamel.yaml==0.17.21
+ruamel.yaml.clib==0.2.7
+scikit-learn==1.2.2
+scipy==1.10.1
+sentencepiece==0.1.97
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+soundfile==0.12.1
+soxr==0.3.4
+-e git+https://github.com/speechbrain/speechbrain.git@beec862238c4c2ccfcb20d9ca592b671673ee6af#egg=speechbrain
+sympy @ file:///croot/sympy_1668202399572/work
+threadpoolctl==3.1.0
+toml==0.10.2
+torch==2.0.0
+torchaudio==2.0.0
+torchvision==0.15.0
+tqdm==4.65.0
+triton==2.0.0
+typed-ast==1.5.4
+typing_extensions==4.5.0
+urllib3==1.26.15
+virtualenv==20.22.0
+wcwidth==0.2.6
+yamllint==1.23.0
+
+
+2023-05-10 22:37:43,429 - speechbrain.utils.superpowers - DEBUG - 69c8a82
+
+
+2023-05-10 22:37:44,254 - speechbrain.core - INFO - Info: auto_mix_prec arg from hparam file is used
+2023-05-10 22:37:44,254 - speechbrain.core - INFO - Info: noprogressbar arg from hparam file is used
+2023-05-10 22:37:44,831 - speechbrain.core - INFO - 6.7M trainable parameters in Separation
+2023-05-10 22:37:44,981 - speechbrain.utils.checkpoints - INFO - Would load a checkpoint here, but none found yet.
+2023-05-10 22:37:44,981 - speechbrain.utils.epoch_loop - INFO - Going into epoch 1
+2023-05-10 22:37:46,032 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 627, in <module>
+    separator.fit(
+  File "/home/kilin/speechbrain/speechbrain/core.py", line 1207, in fit
+    self._fit_train(train_set=train_set, epoch=epoch, enable=enable)
+  File "/home/kilin/speechbrain/speechbrain/core.py", line 1060, in _fit_train
+    loss = self.fit_batch(batch)
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 143, in fit_batch
+    predictions, targets = self.compute_forward(
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 71, in compute_forward
+    est_mask = self.hparams.MaskNet(mix_w)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 1035, in forward
+    x = self._over_add(x, gap)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 1145, in _over_add
+    input2 = input[:, :, :, K:].contiguous().view(B, N, -1)[:, :, :-P]
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 142.00 MiB (GPU 0; 23.69 GiB total capacity; 21.68 GiB already allocated; 48.94 MiB free; 22.31 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+2023-05-10 22:57:05,658 - speechbrain.core - INFO - Beginning experiment!
+2023-05-10 22:57:05,659 - speechbrain.core - INFO - Experiment folder: results/sepformer-custom/1234
+2023-05-10 22:57:05,882 - speechbrain.utils.superpowers - DEBUG - appdirs==1.4.4
+attrs==23.1.0
+audioread==3.0.0
+black==19.10b0
+brotlipy==0.7.0
+cachetools==5.3.0
+certifi @ file:///croot/certifi_1671487769961/work/certifi
+cffi @ file:///croot/cffi_1670423208954/work
+cfgv==3.3.1
+chardet==5.1.0
+charset-normalizer==3.1.0
+click==8.0.4
+cryptography @ file:///croot/cryptography_1677533068310/work
+decorator==5.1.1
+distlib==0.3.6
+entrypoints==0.3
+filelock==3.12.0
+flake8==3.7.9
+flit_core @ file:///opt/conda/conda-bld/flit-core_1644941570762/work/source/flit_core
+future==0.18.3
+gmpy2 @ file:///tmp/build/80754af9/gmpy2_1645455533097/work
+huggingface-hub==0.13.3
+HyperPyYAML==1.1.0
+identify==2.5.22
+idna @ file:///croot/idna_1666125576474/work
+Jinja2 @ file:///croot/jinja2_1666908132255/work
+joblib==1.2.0
+lazy_loader==0.1
+librosa==0.10.0.post2
+llvmlite==0.39.1
+MarkupSafe @ file:///opt/conda/conda-bld/markupsafe_1654597864307/work
+mccabe==0.6.1
+mir-eval==0.7
+mkl-fft==1.3.1
+mkl-random @ file:///home/builder/ci_310/mkl_random_1641843545607/work
+mkl-service==2.4.0
+more-itertools==9.1.0
+mpmath==1.2.1
+msgpack==1.0.5
+networkx @ file:///croot/networkx_1678964333703/work
+nodeenv==1.7.0
+numba==0.56.4
+numpy @ file:///croot/numpy_and_numpy_base_1672336185480/work
+nvidia-ml-py==11.525.112
+nvitop==1.1.2
+packaging @ file:///croot/packaging_1678965309396/work
+pathspec==0.11.1
+Pillow==9.4.0
+platformdirs==3.2.0
+pluggy==0.13.1
+pooch==1.6.0
+pre-commit==3.2.2
+psutil==5.9.5
+py==1.11.0
+pycodestyle==2.5.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyflakes==2.1.1
+pyOpenSSL @ file:///croot/pyopenssl_1677607685877/work
+PySocks @ file:///home/builder/ci_310/pysocks_1640793678128/work
+pytest==5.4.1
+PyYAML==6.0
+regex==2023.3.23
+requests==2.28.2
+ruamel.yaml==0.17.21
+ruamel.yaml.clib==0.2.7
+scikit-learn==1.2.2
+scipy==1.10.1
+sentencepiece==0.1.97
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+soundfile==0.12.1
+soxr==0.3.4
+-e git+https://github.com/speechbrain/speechbrain.git@beec862238c4c2ccfcb20d9ca592b671673ee6af#egg=speechbrain
+sympy @ file:///croot/sympy_1668202399572/work
+termcolor==2.3.0
+threadpoolctl==3.1.0
+toml==0.10.2
+torch==2.0.0
+torchaudio==2.0.0
+torchvision==0.15.0
+tqdm==4.65.0
+triton==2.0.0
+typed-ast==1.5.4
+typing_extensions==4.5.0
+urllib3==1.26.15
+virtualenv==20.22.0
+wcwidth==0.2.6
+yamllint==1.23.0
+
+
+2023-05-10 22:57:05,883 - speechbrain.utils.superpowers - DEBUG - 69c8a82
+
+
+2023-05-10 22:57:06,770 - speechbrain.core - INFO - Info: auto_mix_prec arg from hparam file is used
+2023-05-10 22:57:06,770 - speechbrain.core - INFO - Info: noprogressbar arg from hparam file is used
+2023-05-10 22:57:07,361 - speechbrain.core - INFO - 6.7M trainable parameters in Separation
+2023-05-10 22:57:07,520 - speechbrain.utils.checkpoints - INFO - Would load a checkpoint here, but none found yet.
+2023-05-10 22:57:07,521 - speechbrain.utils.epoch_loop - INFO - Going into epoch 1
+2023-05-10 22:57:08,520 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 627, in <module>
+    separator.fit(
+  File "/home/kilin/speechbrain/speechbrain/core.py", line 1207, in fit
+    self._fit_train(train_set=train_set, epoch=epoch, enable=enable)
+  File "/home/kilin/speechbrain/speechbrain/core.py", line 1060, in _fit_train
+    loss = self.fit_batch(batch)
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 143, in fit_batch
+    predictions, targets = self.compute_forward(
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 71, in compute_forward
+    est_mask = self.hparams.MaskNet(mix_w)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 1024, in forward
+    x = self.dual_mdl[i](x)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 854, in forward
+    intra = self.intra_mdl(intra)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 600, in forward
+    return self.mdl(x + pos_enc)[0]
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/transformer/Transformer.py", line 477, in forward
+    output, attention = enc_layer(
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/transformer/Transformer.py", line 367, in forward
+    output = self.pos_ffn(src1)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/nnet/attention.py", line 834, in forward
+    x = self.ffn(x)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 103, in forward
+    return F.relu(input, inplace=self.inplace)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/functional.py", line 1457, in relu
+    result = torch.relu(input)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.10 GiB (GPU 0; 23.69 GiB total capacity; 20.20 GiB already allocated; 550.94 MiB free; 21.82 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+2023-05-10 22:59:43,518 - speechbrain.core - INFO - Beginning experiment!
+2023-05-10 22:59:43,518 - speechbrain.core - INFO - Experiment folder: results/sepformer-custom/1234
+2023-05-10 22:59:43,736 - speechbrain.utils.superpowers - DEBUG - appdirs==1.4.4
+attrs==23.1.0
+audioread==3.0.0
+black==19.10b0
+brotlipy==0.7.0
+cachetools==5.3.0
+certifi @ file:///croot/certifi_1671487769961/work/certifi
+cffi @ file:///croot/cffi_1670423208954/work
+cfgv==3.3.1
+chardet==5.1.0
+charset-normalizer==3.1.0
+click==8.0.4
+cryptography @ file:///croot/cryptography_1677533068310/work
+decorator==5.1.1
+distlib==0.3.6
+entrypoints==0.3
+filelock==3.12.0
+flake8==3.7.9
+flit_core @ file:///opt/conda/conda-bld/flit-core_1644941570762/work/source/flit_core
+future==0.18.3
+gmpy2 @ file:///tmp/build/80754af9/gmpy2_1645455533097/work
+huggingface-hub==0.13.3
+HyperPyYAML==1.1.0
+identify==2.5.22
+idna @ file:///croot/idna_1666125576474/work
+Jinja2 @ file:///croot/jinja2_1666908132255/work
+joblib==1.2.0
+lazy_loader==0.1
+librosa==0.10.0.post2
+llvmlite==0.39.1
+MarkupSafe @ file:///opt/conda/conda-bld/markupsafe_1654597864307/work
+mccabe==0.6.1
+mir-eval==0.7
+mkl-fft==1.3.1
+mkl-random @ file:///home/builder/ci_310/mkl_random_1641843545607/work
+mkl-service==2.4.0
+more-itertools==9.1.0
+mpmath==1.2.1
+msgpack==1.0.5
+networkx @ file:///croot/networkx_1678964333703/work
+nodeenv==1.7.0
+numba==0.56.4
+numpy @ file:///croot/numpy_and_numpy_base_1672336185480/work
+nvidia-ml-py==11.525.112
+nvitop==1.1.2
+packaging @ file:///croot/packaging_1678965309396/work
+pathspec==0.11.1
+Pillow==9.4.0
+platformdirs==3.2.0
+pluggy==0.13.1
+pooch==1.6.0
+pre-commit==3.2.2
+psutil==5.9.5
+py==1.11.0
+pycodestyle==2.5.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyflakes==2.1.1
+pyOpenSSL @ file:///croot/pyopenssl_1677607685877/work
+PySocks @ file:///home/builder/ci_310/pysocks_1640793678128/work
+pytest==5.4.1
+PyYAML==6.0
+regex==2023.3.23
+requests==2.28.2
+ruamel.yaml==0.17.21
+ruamel.yaml.clib==0.2.7
+scikit-learn==1.2.2
+scipy==1.10.1
+sentencepiece==0.1.97
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+soundfile==0.12.1
+soxr==0.3.4
+-e git+https://github.com/speechbrain/speechbrain.git@beec862238c4c2ccfcb20d9ca592b671673ee6af#egg=speechbrain
+sympy @ file:///croot/sympy_1668202399572/work
+termcolor==2.3.0
+threadpoolctl==3.1.0
+toml==0.10.2
+torch==2.0.0
+torchaudio==2.0.0
+torchvision==0.15.0
+tqdm==4.65.0
+triton==2.0.0
+typed-ast==1.5.4
+typing_extensions==4.5.0
+urllib3==1.26.15
+virtualenv==20.22.0
+wcwidth==0.2.6
+yamllint==1.23.0
+
+
+2023-05-10 22:59:43,738 - speechbrain.utils.superpowers - DEBUG - 69c8a82
+
+
+2023-05-10 22:59:44,618 - speechbrain.core - INFO - Info: auto_mix_prec arg from hparam file is used
+2023-05-10 22:59:44,619 - speechbrain.core - INFO - Info: noprogressbar arg from hparam file is used
+2023-05-10 22:59:45,214 - speechbrain.core - INFO - 6.7M trainable parameters in Separation
+2023-05-10 22:59:45,379 - speechbrain.utils.checkpoints - INFO - Would load a checkpoint here, but none found yet.
+2023-05-10 22:59:45,379 - speechbrain.utils.epoch_loop - INFO - Going into epoch 1
+2023-05-10 22:59:46,354 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 627, in <module>
+    separator.fit(
+  File "/home/kilin/speechbrain/speechbrain/core.py", line 1207, in fit
+    self._fit_train(train_set=train_set, epoch=epoch, enable=enable)
+  File "/home/kilin/speechbrain/speechbrain/core.py", line 1060, in _fit_train
+    loss = self.fit_batch(batch)
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 143, in fit_batch
+    predictions, targets = self.compute_forward(
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 71, in compute_forward
+    est_mask = self.hparams.MaskNet(mix_w)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 1024, in forward
+    x = self.dual_mdl[i](x)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 854, in forward
+    intra = self.intra_mdl(intra)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 600, in forward
+    return self.mdl(x + pos_enc)[0]
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/transformer/Transformer.py", line 477, in forward
+    output, attention = enc_layer(
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/transformer/Transformer.py", line 367, in forward
+    output = self.pos_ffn(src1)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/nnet/attention.py", line 834, in forward
+    x = self.ffn(x)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 103, in forward
+    return F.relu(input, inplace=self.inplace)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/functional.py", line 1457, in relu
+    result = torch.relu(input)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.10 GiB (GPU 0; 23.69 GiB total capacity; 20.20 GiB already allocated; 550.94 MiB free; 21.82 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+2023-05-10 22:59:59,580 - speechbrain.core - INFO - Beginning experiment!
+2023-05-10 22:59:59,580 - speechbrain.core - INFO - Experiment folder: results/sepformer-custom/1234
+2023-05-10 22:59:59,803 - speechbrain.utils.superpowers - DEBUG - appdirs==1.4.4
+attrs==23.1.0
+audioread==3.0.0
+black==19.10b0
+brotlipy==0.7.0
+cachetools==5.3.0
+certifi @ file:///croot/certifi_1671487769961/work/certifi
+cffi @ file:///croot/cffi_1670423208954/work
+cfgv==3.3.1
+chardet==5.1.0
+charset-normalizer==3.1.0
+click==8.0.4
+cryptography @ file:///croot/cryptography_1677533068310/work
+decorator==5.1.1
+distlib==0.3.6
+entrypoints==0.3
+filelock==3.12.0
+flake8==3.7.9
+flit_core @ file:///opt/conda/conda-bld/flit-core_1644941570762/work/source/flit_core
+future==0.18.3
+gmpy2 @ file:///tmp/build/80754af9/gmpy2_1645455533097/work
+huggingface-hub==0.13.3
+HyperPyYAML==1.1.0
+identify==2.5.22
+idna @ file:///croot/idna_1666125576474/work
+Jinja2 @ file:///croot/jinja2_1666908132255/work
+joblib==1.2.0
+lazy_loader==0.1
+librosa==0.10.0.post2
+llvmlite==0.39.1
+MarkupSafe @ file:///opt/conda/conda-bld/markupsafe_1654597864307/work
+mccabe==0.6.1
+mir-eval==0.7
+mkl-fft==1.3.1
+mkl-random @ file:///home/builder/ci_310/mkl_random_1641843545607/work
+mkl-service==2.4.0
+more-itertools==9.1.0
+mpmath==1.2.1
+msgpack==1.0.5
+networkx @ file:///croot/networkx_1678964333703/work
+nodeenv==1.7.0
+numba==0.56.4
+numpy @ file:///croot/numpy_and_numpy_base_1672336185480/work
+nvidia-ml-py==11.525.112
+nvitop==1.1.2
+packaging @ file:///croot/packaging_1678965309396/work
+pathspec==0.11.1
+Pillow==9.4.0
+platformdirs==3.2.0
+pluggy==0.13.1
+pooch==1.6.0
+pre-commit==3.2.2
+psutil==5.9.5
+py==1.11.0
+pycodestyle==2.5.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyflakes==2.1.1
+pyOpenSSL @ file:///croot/pyopenssl_1677607685877/work
+PySocks @ file:///home/builder/ci_310/pysocks_1640793678128/work
+pytest==5.4.1
+PyYAML==6.0
+regex==2023.3.23
+requests==2.28.2
+ruamel.yaml==0.17.21
+ruamel.yaml.clib==0.2.7
+scikit-learn==1.2.2
+scipy==1.10.1
+sentencepiece==0.1.97
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+soundfile==0.12.1
+soxr==0.3.4
+-e git+https://github.com/speechbrain/speechbrain.git@beec862238c4c2ccfcb20d9ca592b671673ee6af#egg=speechbrain
+sympy @ file:///croot/sympy_1668202399572/work
+termcolor==2.3.0
+threadpoolctl==3.1.0
+toml==0.10.2
+torch==2.0.0
+torchaudio==2.0.0
+torchvision==0.15.0
+tqdm==4.65.0
+triton==2.0.0
+typed-ast==1.5.4
+typing_extensions==4.5.0
+urllib3==1.26.15
+virtualenv==20.22.0
+wcwidth==0.2.6
+yamllint==1.23.0
+
+
+2023-05-10 22:59:59,804 - speechbrain.utils.superpowers - DEBUG - 69c8a82
+
+
+2023-05-10 23:00:00,677 - speechbrain.core - INFO - Info: auto_mix_prec arg from hparam file is used
+2023-05-10 23:00:00,677 - speechbrain.core - INFO - Info: noprogressbar arg from hparam file is used
+2023-05-10 23:00:01,277 - speechbrain.core - INFO - 6.7M trainable parameters in Separation
+2023-05-10 23:00:01,442 - speechbrain.utils.checkpoints - INFO - Would load a checkpoint here, but none found yet.
+2023-05-10 23:00:01,442 - speechbrain.utils.epoch_loop - INFO - Going into epoch 1
+2023-05-10 23:00:02,420 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 627, in <module>
+    separator.fit(
+  File "/home/kilin/speechbrain/speechbrain/core.py", line 1207, in fit
+    self._fit_train(train_set=train_set, epoch=epoch, enable=enable)
+  File "/home/kilin/speechbrain/speechbrain/core.py", line 1060, in _fit_train
+    loss = self.fit_batch(batch)
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 143, in fit_batch
+    predictions, targets = self.compute_forward(
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 71, in compute_forward
+    est_mask = self.hparams.MaskNet(mix_w)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 1024, in forward
+    x = self.dual_mdl[i](x)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 854, in forward
+    intra = self.intra_mdl(intra)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 600, in forward
+    return self.mdl(x + pos_enc)[0]
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/transformer/Transformer.py", line 477, in forward
+    output, attention = enc_layer(
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/transformer/Transformer.py", line 367, in forward
+    output = self.pos_ffn(src1)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/nnet/attention.py", line 834, in forward
+    x = self.ffn(x)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 103, in forward
+    return F.relu(input, inplace=self.inplace)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/functional.py", line 1457, in relu
+    result = torch.relu(input)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.10 GiB (GPU 0; 23.69 GiB total capacity; 20.20 GiB already allocated; 550.94 MiB free; 21.82 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+2023-05-10 23:34:47,735 - speechbrain.core - INFO - Beginning experiment!
+2023-05-10 23:34:47,735 - speechbrain.core - INFO - Experiment folder: results/sepformer-custom/1234
+2023-05-10 23:34:47,957 - speechbrain.utils.superpowers - DEBUG - appdirs==1.4.4
+attrs==23.1.0
+audioread==3.0.0
+black==19.10b0
+brotlipy==0.7.0
+cachetools==5.3.0
+certifi @ file:///croot/certifi_1671487769961/work/certifi
+cffi @ file:///croot/cffi_1670423208954/work
+cfgv==3.3.1
+chardet==5.1.0
+charset-normalizer==3.1.0
+click==8.0.4
+cryptography @ file:///croot/cryptography_1677533068310/work
+decorator==5.1.1
+distlib==0.3.6
+entrypoints==0.3
+filelock==3.12.0
+flake8==3.7.9
+flit_core @ file:///opt/conda/conda-bld/flit-core_1644941570762/work/source/flit_core
+future==0.18.3
+gmpy2 @ file:///tmp/build/80754af9/gmpy2_1645455533097/work
+huggingface-hub==0.13.3
+HyperPyYAML==1.1.0
+identify==2.5.22
+idna @ file:///croot/idna_1666125576474/work
+Jinja2 @ file:///croot/jinja2_1666908132255/work
+joblib==1.2.0
+lazy_loader==0.1
+librosa==0.10.0.post2
+llvmlite==0.39.1
+MarkupSafe @ file:///opt/conda/conda-bld/markupsafe_1654597864307/work
+mccabe==0.6.1
+mir-eval==0.7
+mkl-fft==1.3.1
+mkl-random @ file:///home/builder/ci_310/mkl_random_1641843545607/work
+mkl-service==2.4.0
+more-itertools==9.1.0
+mpmath==1.2.1
+msgpack==1.0.5
+networkx @ file:///croot/networkx_1678964333703/work
+nodeenv==1.7.0
+numba==0.56.4
+numpy @ file:///croot/numpy_and_numpy_base_1672336185480/work
+nvidia-ml-py==11.525.112
+nvitop==1.1.2
+packaging @ file:///croot/packaging_1678965309396/work
+pathspec==0.11.1
+Pillow==9.4.0
+platformdirs==3.2.0
+pluggy==0.13.1
+pooch==1.6.0
+pre-commit==3.2.2
+psutil==5.9.5
+py==1.11.0
+pycodestyle==2.5.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyflakes==2.1.1
+pyOpenSSL @ file:///croot/pyopenssl_1677607685877/work
+PySocks @ file:///home/builder/ci_310/pysocks_1640793678128/work
+pytest==5.4.1
+PyYAML==6.0
+regex==2023.3.23
+requests==2.28.2
+ruamel.yaml==0.17.21
+ruamel.yaml.clib==0.2.7
+scikit-learn==1.2.2
+scipy==1.10.1
+sentencepiece==0.1.97
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+soundfile==0.12.1
+soxr==0.3.4
+-e git+https://github.com/speechbrain/speechbrain.git@beec862238c4c2ccfcb20d9ca592b671673ee6af#egg=speechbrain
+sympy @ file:///croot/sympy_1668202399572/work
+termcolor==2.3.0
+threadpoolctl==3.1.0
+toml==0.10.2
+torch==2.0.0
+torchaudio==2.0.0
+torchvision==0.15.0
+tqdm==4.65.0
+triton==2.0.0
+typed-ast==1.5.4
+typing_extensions==4.5.0
+urllib3==1.26.15
+virtualenv==20.22.0
+wcwidth==0.2.6
+yamllint==1.23.0
+
+
+2023-05-10 23:34:47,958 - speechbrain.utils.superpowers - DEBUG - 69c8a82
+
+
+2023-05-10 23:34:48,865 - speechbrain.core - INFO - Info: auto_mix_prec arg from hparam file is used
+2023-05-10 23:34:48,865 - speechbrain.core - INFO - Info: noprogressbar arg from hparam file is used
+2023-05-10 23:34:49,440 - speechbrain.core - INFO - 6.7M trainable parameters in Separation
+2023-05-10 23:34:49,596 - speechbrain.utils.checkpoints - INFO - Would load a checkpoint here, but none found yet.
+2023-05-10 23:34:49,596 - speechbrain.utils.epoch_loop - INFO - Going into epoch 1
+2023-05-10 23:34:50,572 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 627, in <module>
+    separator.fit(
+  File "/home/kilin/speechbrain/speechbrain/core.py", line 1207, in fit
+    self._fit_train(train_set=train_set, epoch=epoch, enable=enable)
+  File "/home/kilin/speechbrain/speechbrain/core.py", line 1060, in _fit_train
+    loss = self.fit_batch(batch)
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 143, in fit_batch
+    predictions, targets = self.compute_forward(
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 71, in compute_forward
+    est_mask = self.hparams.MaskNet(mix_w)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 1024, in forward
+    x = self.dual_mdl[i](x)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 854, in forward
+    intra = self.intra_mdl(intra)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/dual_path.py", line 600, in forward
+    return self.mdl(x + pos_enc)[0]
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/transformer/Transformer.py", line 477, in forward
+    output, attention = enc_layer(
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/lobes/models/transformer/Transformer.py", line 367, in forward
+    output = self.pos_ffn(src1)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/speechbrain/speechbrain/nnet/attention.py", line 834, in forward
+    x = self.ffn(x)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 103, in forward
+    return F.relu(input, inplace=self.inplace)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/functional.py", line 1457, in relu
+    result = torch.relu(input)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.10 GiB (GPU 0; 23.69 GiB total capacity; 20.20 GiB already allocated; 550.94 MiB free; 21.82 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+2023-05-11 00:07:48,040 - speechbrain.core - INFO - Beginning experiment!
+2023-05-11 00:07:48,040 - speechbrain.core - INFO - Experiment folder: results/sepformer-custom/1234
+2023-05-11 00:07:48,252 - speechbrain.utils.superpowers - DEBUG - appdirs==1.4.4
+attrs==23.1.0
+audioread==3.0.0
+black==19.10b0
+brotlipy==0.7.0
+cachetools==5.3.0
+certifi @ file:///croot/certifi_1671487769961/work/certifi
+cffi @ file:///croot/cffi_1670423208954/work
+cfgv==3.3.1
+chardet==5.1.0
+charset-normalizer==3.1.0
+click==8.0.4
+cryptography @ file:///croot/cryptography_1677533068310/work
+decorator==5.1.1
+distlib==0.3.6
+entrypoints==0.3
+filelock==3.12.0
+flake8==3.7.9
+flit_core @ file:///opt/conda/conda-bld/flit-core_1644941570762/work/source/flit_core
+future==0.18.3
+gmpy2 @ file:///tmp/build/80754af9/gmpy2_1645455533097/work
+huggingface-hub==0.13.3
+HyperPyYAML==1.1.0
+identify==2.5.22
+idna @ file:///croot/idna_1666125576474/work
+Jinja2 @ file:///croot/jinja2_1666908132255/work
+joblib==1.2.0
+lazy_loader==0.1
+librosa==0.10.0.post2
+llvmlite==0.39.1
+MarkupSafe @ file:///opt/conda/conda-bld/markupsafe_1654597864307/work
+mccabe==0.6.1
+mir-eval==0.7
+mkl-fft==1.3.1
+mkl-random @ file:///home/builder/ci_310/mkl_random_1641843545607/work
+mkl-service==2.4.0
+more-itertools==9.1.0
+mpmath==1.2.1
+msgpack==1.0.5
+networkx @ file:///croot/networkx_1678964333703/work
+nodeenv==1.7.0
+numba==0.56.4
+numpy @ file:///croot/numpy_and_numpy_base_1672336185480/work
+nvidia-ml-py==11.525.112
+nvitop==1.1.2
+packaging @ file:///croot/packaging_1678965309396/work
+pathspec==0.11.1
+Pillow==9.4.0
+platformdirs==3.2.0
+pluggy==0.13.1
+pooch==1.6.0
+pre-commit==3.2.2
+psutil==5.9.5
+py==1.11.0
+pycodestyle==2.5.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyflakes==2.1.1
+pyOpenSSL @ file:///croot/pyopenssl_1677607685877/work
+PySocks @ file:///home/builder/ci_310/pysocks_1640793678128/work
+pytest==5.4.1
+PyYAML==6.0
+regex==2023.3.23
+requests==2.28.2
+ruamel.yaml==0.17.21
+ruamel.yaml.clib==0.2.7
+scikit-learn==1.2.2
+scipy==1.10.1
+sentencepiece==0.1.97
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+soundfile==0.12.1
+soxr==0.3.4
+speechbrain==0.5.14
+sympy @ file:///croot/sympy_1668202399572/work
+termcolor==2.3.0
+threadpoolctl==3.1.0
+toml==0.10.2
+torch==2.0.0
+torchaudio==2.0.0
+torchvision==0.15.0
+tqdm==4.65.0
+triton==2.0.0
+typed-ast==1.5.4
+typing_extensions==4.5.0
+urllib3==1.26.15
+virtualenv==20.22.0
+wcwidth==0.2.6
+yamllint==1.23.0
+
+
+2023-05-11 00:07:48,254 - speechbrain.utils.superpowers - DEBUG - 69c8a82
+
+
+2023-05-11 00:07:49,118 - speechbrain.core - INFO - Info: auto_mix_prec arg from hparam file is used
+2023-05-11 00:07:49,118 - speechbrain.core - INFO - Info: noprogressbar arg from hparam file is used
+2023-05-11 00:07:49,699 - speechbrain.core - INFO - 2.7M trainable parameters in Separation
+2023-05-11 00:07:49,862 - speechbrain.utils.checkpoints - INFO - Would load a checkpoint here, but none found yet.
+2023-05-11 00:07:49,862 - speechbrain.utils.epoch_loop - INFO - Going into epoch 1
+2023-05-11 00:07:50,801 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 627, in <module>
+    separator.fit(
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/core.py", line 1225, in fit
+    self._fit_train(train_set=train_set, epoch=epoch, enable=enable)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/core.py", line 1078, in _fit_train
+    loss = self.fit_batch(batch)
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 143, in fit_batch
+    predictions, targets = self.compute_forward(
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 71, in compute_forward
+    est_mask = self.hparams.MaskNet(mix_w)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/lobes/models/dual_path.py", line 1024, in forward
+    x = self.dual_mdl[i](x)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/lobes/models/dual_path.py", line 854, in forward
+    intra = self.intra_mdl(intra)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/lobes/models/dual_path.py", line 600, in forward
+    return self.mdl(x + pos_enc)[0]
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/lobes/models/transformer/Transformer.py", line 477, in forward
+    output, attention = enc_layer(
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/lobes/models/transformer/Transformer.py", line 367, in forward
+    output = self.pos_ffn(src1)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/nnet/attention.py", line 834, in forward
+    x = self.ffn(x)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 103, in forward
+    return F.relu(input, inplace=self.inplace)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/functional.py", line 1457, in relu
+    result = torch.relu(input)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.10 GiB (GPU 0; 23.69 GiB total capacity; 20.27 GiB already allocated; 148.94 MiB free; 22.21 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+2023-05-11 00:08:31,560 - speechbrain.core - INFO - Beginning experiment!
+2023-05-11 00:08:31,560 - speechbrain.core - INFO - Experiment folder: results/sepformer-custom/1234
+2023-05-11 00:08:31,770 - speechbrain.utils.superpowers - DEBUG - appdirs==1.4.4
+attrs==23.1.0
+audioread==3.0.0
+black==19.10b0
+brotlipy==0.7.0
+cachetools==5.3.0
+certifi @ file:///croot/certifi_1671487769961/work/certifi
+cffi @ file:///croot/cffi_1670423208954/work
+cfgv==3.3.1
+chardet==5.1.0
+charset-normalizer==3.1.0
+click==8.0.4
+cryptography @ file:///croot/cryptography_1677533068310/work
+decorator==5.1.1
+distlib==0.3.6
+entrypoints==0.3
+filelock==3.12.0
+flake8==3.7.9
+flit_core @ file:///opt/conda/conda-bld/flit-core_1644941570762/work/source/flit_core
+future==0.18.3
+gmpy2 @ file:///tmp/build/80754af9/gmpy2_1645455533097/work
+huggingface-hub==0.13.3
+HyperPyYAML==1.1.0
+identify==2.5.22
+idna @ file:///croot/idna_1666125576474/work
+Jinja2 @ file:///croot/jinja2_1666908132255/work
+joblib==1.2.0
+lazy_loader==0.1
+librosa==0.10.0.post2
+llvmlite==0.39.1
+MarkupSafe @ file:///opt/conda/conda-bld/markupsafe_1654597864307/work
+mccabe==0.6.1
+mir-eval==0.7
+mkl-fft==1.3.1
+mkl-random @ file:///home/builder/ci_310/mkl_random_1641843545607/work
+mkl-service==2.4.0
+more-itertools==9.1.0
+mpmath==1.2.1
+msgpack==1.0.5
+networkx @ file:///croot/networkx_1678964333703/work
+nodeenv==1.7.0
+numba==0.56.4
+numpy @ file:///croot/numpy_and_numpy_base_1672336185480/work
+nvidia-ml-py==11.525.112
+nvitop==1.1.2
+packaging @ file:///croot/packaging_1678965309396/work
+pathspec==0.11.1
+Pillow==9.4.0
+platformdirs==3.2.0
+pluggy==0.13.1
+pooch==1.6.0
+pre-commit==3.2.2
+psutil==5.9.5
+py==1.11.0
+pycodestyle==2.5.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyflakes==2.1.1
+pyOpenSSL @ file:///croot/pyopenssl_1677607685877/work
+PySocks @ file:///home/builder/ci_310/pysocks_1640793678128/work
+pytest==5.4.1
+PyYAML==6.0
+regex==2023.3.23
+requests==2.28.2
+ruamel.yaml==0.17.21
+ruamel.yaml.clib==0.2.7
+scikit-learn==1.2.2
+scipy==1.10.1
+sentencepiece==0.1.97
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+soundfile==0.12.1
+soxr==0.3.4
+speechbrain==0.5.14
+sympy @ file:///croot/sympy_1668202399572/work
+termcolor==2.3.0
+threadpoolctl==3.1.0
+toml==0.10.2
+torch==2.0.0
+torchaudio==2.0.0
+torchvision==0.15.0
+tqdm==4.65.0
+triton==2.0.0
+typed-ast==1.5.4
+typing_extensions==4.5.0
+urllib3==1.26.15
+virtualenv==20.22.0
+wcwidth==0.2.6
+yamllint==1.23.0
+
+
+2023-05-11 00:08:31,780 - speechbrain.utils.superpowers - DEBUG - 69c8a82
+
+
+2023-05-11 00:08:32,657 - speechbrain.core - INFO - Info: auto_mix_prec arg from hparam file is used
+2023-05-11 00:08:32,657 - speechbrain.core - INFO - Info: noprogressbar arg from hparam file is used
+2023-05-11 00:08:33,247 - speechbrain.core - INFO - 1.7M trainable parameters in Separation
+2023-05-11 00:08:33,410 - speechbrain.utils.checkpoints - INFO - Would load a checkpoint here, but none found yet.
+2023-05-11 00:08:33,410 - speechbrain.utils.epoch_loop - INFO - Going into epoch 1
+2023-05-11 00:08:34,408 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 627, in <module>
+    separator.fit(
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/core.py", line 1225, in fit
+    self._fit_train(train_set=train_set, epoch=epoch, enable=enable)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/core.py", line 1078, in _fit_train
+    loss = self.fit_batch(batch)
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 143, in fit_batch
+    predictions, targets = self.compute_forward(
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 71, in compute_forward
+    est_mask = self.hparams.MaskNet(mix_w)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/lobes/models/dual_path.py", line 1024, in forward
+    x = self.dual_mdl[i](x)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/lobes/models/dual_path.py", line 875, in forward
+    inter = self.inter_mdl(inter)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/lobes/models/dual_path.py", line 600, in forward
+    return self.mdl(x + pos_enc)[0]
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/lobes/models/transformer/Transformer.py", line 477, in forward
+    output, attention = enc_layer(
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/lobes/models/transformer/Transformer.py", line 367, in forward
+    output = self.pos_ffn(src1)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/nnet/attention.py", line 834, in forward
+    x = self.ffn(x)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 564.00 MiB (GPU 0; 23.69 GiB total capacity; 21.07 GiB already allocated; 342.94 MiB free; 22.03 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+2023-05-11 00:09:42,589 - speechbrain.core - INFO - Beginning experiment!
+2023-05-11 00:09:42,589 - speechbrain.core - INFO - Experiment folder: results/sepformer-custom/1234
+2023-05-11 00:09:42,806 - speechbrain.utils.superpowers - DEBUG - appdirs==1.4.4
+attrs==23.1.0
+audioread==3.0.0
+black==19.10b0
+brotlipy==0.7.0
+cachetools==5.3.0
+certifi @ file:///croot/certifi_1671487769961/work/certifi
+cffi @ file:///croot/cffi_1670423208954/work
+cfgv==3.3.1
+chardet==5.1.0
+charset-normalizer==3.1.0
+click==8.0.4
+cryptography @ file:///croot/cryptography_1677533068310/work
+decorator==5.1.1
+distlib==0.3.6
+entrypoints==0.3
+filelock==3.12.0
+flake8==3.7.9
+flit_core @ file:///opt/conda/conda-bld/flit-core_1644941570762/work/source/flit_core
+future==0.18.3
+gmpy2 @ file:///tmp/build/80754af9/gmpy2_1645455533097/work
+huggingface-hub==0.13.3
+HyperPyYAML==1.1.0
+identify==2.5.22
+idna @ file:///croot/idna_1666125576474/work
+Jinja2 @ file:///croot/jinja2_1666908132255/work
+joblib==1.2.0
+lazy_loader==0.1
+librosa==0.10.0.post2
+llvmlite==0.39.1
+MarkupSafe @ file:///opt/conda/conda-bld/markupsafe_1654597864307/work
+mccabe==0.6.1
+mir-eval==0.7
+mkl-fft==1.3.1
+mkl-random @ file:///home/builder/ci_310/mkl_random_1641843545607/work
+mkl-service==2.4.0
+more-itertools==9.1.0
+mpmath==1.2.1
+msgpack==1.0.5
+networkx @ file:///croot/networkx_1678964333703/work
+nodeenv==1.7.0
+numba==0.56.4
+numpy @ file:///croot/numpy_and_numpy_base_1672336185480/work
+nvidia-ml-py==11.525.112
+nvitop==1.1.2
+packaging @ file:///croot/packaging_1678965309396/work
+pathspec==0.11.1
+Pillow==9.4.0
+platformdirs==3.2.0
+pluggy==0.13.1
+pooch==1.6.0
+pre-commit==3.2.2
+psutil==5.9.5
+py==1.11.0
+pycodestyle==2.5.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyflakes==2.1.1
+pyOpenSSL @ file:///croot/pyopenssl_1677607685877/work
+PySocks @ file:///home/builder/ci_310/pysocks_1640793678128/work
+pytest==5.4.1
+PyYAML==6.0
+regex==2023.3.23
+requests==2.28.2
+ruamel.yaml==0.17.21
+ruamel.yaml.clib==0.2.7
+scikit-learn==1.2.2
+scipy==1.10.1
+sentencepiece==0.1.97
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+soundfile==0.12.1
+soxr==0.3.4
+speechbrain==0.5.14
+sympy @ file:///croot/sympy_1668202399572/work
+termcolor==2.3.0
+threadpoolctl==3.1.0
+toml==0.10.2
+torch==2.0.0
+torchaudio==2.0.0
+torchvision==0.15.0
+tqdm==4.65.0
+triton==2.0.0
+typed-ast==1.5.4
+typing_extensions==4.5.0
+urllib3==1.26.15
+virtualenv==20.22.0
+wcwidth==0.2.6
+yamllint==1.23.0
+
+
+2023-05-11 00:09:42,808 - speechbrain.utils.superpowers - DEBUG - 69c8a82
+
+
+2023-05-11 00:09:43,678 - speechbrain.core - INFO - Info: auto_mix_prec arg from hparam file is used
+2023-05-11 00:09:43,678 - speechbrain.core - INFO - Info: noprogressbar arg from hparam file is used
+2023-05-11 00:09:44,263 - speechbrain.core - INFO - 897.3k trainable parameters in Separation
+2023-05-11 00:09:44,345 - speechbrain.utils.checkpoints - INFO - Would load a checkpoint here, but none found yet.
+2023-05-11 00:09:44,345 - speechbrain.utils.epoch_loop - INFO - Going into epoch 1
+2023-05-11 00:16:23,716 - speechbrain.utils.train_logger - INFO - epoch: 1, lr: 1.50e-04 - train si-snr: -1.36e+01 - valid si-snr: -1.82e+01
+2023-05-11 00:16:23,737 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-05-11+00-16-23+00
+2023-05-11 00:16:23,739 - speechbrain.utils.epoch_loop - INFO - Going into epoch 2
+2023-05-11 00:23:03,383 - speechbrain.utils.train_logger - INFO - epoch: 2, lr: 1.50e-04 - train si-snr: -1.65e+01 - valid si-snr: -2.02e+01
+2023-05-11 00:23:03,404 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-05-11+00-23-03+00
+2023-05-11 00:23:03,409 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-05-11+00-16-23+00
+2023-05-11 00:23:03,410 - speechbrain.utils.epoch_loop - INFO - Going into epoch 3
+2023-05-11 00:29:43,026 - speechbrain.utils.train_logger - INFO - epoch: 3, lr: 1.50e-04 - train si-snr: -1.89e+01 - valid si-snr: -2.43e+01
+2023-05-11 00:29:43,047 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-05-11+00-29-43+00
+2023-05-11 00:29:43,052 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-05-11+00-23-03+00
+2023-05-11 00:29:43,053 - speechbrain.utils.epoch_loop - INFO - Going into epoch 4
+2023-05-11 00:36:22,269 - speechbrain.utils.train_logger - INFO - epoch: 4, lr: 1.50e-04 - train si-snr: -2.13e+01 - valid si-snr: -2.74e+01
+2023-05-11 00:36:22,290 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in results/sepformer-custom/1234/save/CKPT+2023-05-11+00-36-22+00
+2023-05-11 00:36:22,296 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in results/sepformer-custom/1234/save/CKPT+2023-05-11+00-29-43+00
+2023-05-11 00:36:22,297 - speechbrain.utils.epoch_loop - INFO - Going into epoch 5
+2023-05-11 00:42:20,320 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 627, in <module>
+    separator.fit(
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/core.py", line 1225, in fit
+    self._fit_train(train_set=train_set, epoch=epoch, enable=enable)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/core.py", line 1078, in _fit_train
+    loss = self.fit_batch(batch)
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 157, in fit_batch
+    loss < self.hparams.loss_upper_lim and loss.nelement() > 0
+RuntimeError: Boolean value of Tensor with more than one value is ambiguous
+2023-05-11 15:16:55,900 - speechbrain.core - INFO - Beginning experiment!
+2023-05-11 15:16:55,900 - speechbrain.core - INFO - Experiment folder: results/sepformer-custom/1234
+2023-05-11 15:16:56,110 - speechbrain.utils.superpowers - DEBUG - appdirs==1.4.4
+attrs==23.1.0
+audioread==3.0.0
+black==19.10b0
+brotlipy==0.7.0
+cachetools==5.3.0
+certifi @ file:///croot/certifi_1671487769961/work/certifi
+cffi @ file:///croot/cffi_1670423208954/work
+cfgv==3.3.1
+chardet==5.1.0
+charset-normalizer==3.1.0
+click==8.0.4
+cryptography @ file:///croot/cryptography_1677533068310/work
+decorator==5.1.1
+distlib==0.3.6
+entrypoints==0.3
+filelock==3.12.0
+flake8==3.7.9
+flit_core @ file:///opt/conda/conda-bld/flit-core_1644941570762/work/source/flit_core
+future==0.18.3
+gmpy2 @ file:///tmp/build/80754af9/gmpy2_1645455533097/work
+huggingface-hub==0.13.3
+HyperPyYAML==1.1.0
+identify==2.5.22
+idna @ file:///croot/idna_1666125576474/work
+Jinja2 @ file:///croot/jinja2_1666908132255/work
+joblib==1.2.0
+lazy_loader==0.1
+librosa==0.10.0.post2
+llvmlite==0.39.1
+MarkupSafe @ file:///opt/conda/conda-bld/markupsafe_1654597864307/work
+mccabe==0.6.1
+mir-eval==0.7
+mkl-fft==1.3.1
+mkl-random @ file:///home/builder/ci_310/mkl_random_1641843545607/work
+mkl-service==2.4.0
+more-itertools==9.1.0
+mpmath==1.2.1
+msgpack==1.0.5
+networkx @ file:///croot/networkx_1678964333703/work
+nodeenv==1.7.0
+numba==0.56.4
+numpy @ file:///croot/numpy_and_numpy_base_1672336185480/work
+nvidia-ml-py==11.525.112
+nvitop==1.1.2
+packaging @ file:///croot/packaging_1678965309396/work
+pathspec==0.11.1
+Pillow==9.4.0
+platformdirs==3.2.0
+pluggy==0.13.1
+pooch==1.6.0
+pre-commit==3.2.2
+psutil==5.9.5
+py==1.11.0
+pycodestyle==2.5.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyflakes==2.1.1
+pyOpenSSL @ file:///croot/pyopenssl_1677607685877/work
+PySocks @ file:///home/builder/ci_310/pysocks_1640793678128/work
+pytest==5.4.1
+PyYAML==6.0
+regex==2023.3.23
+requests==2.28.2
+ruamel.yaml==0.17.21
+ruamel.yaml.clib==0.2.7
+scikit-learn==1.2.2
+scipy==1.10.1
+sentencepiece==0.1.97
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+soundfile==0.12.1
+soxr==0.3.4
+speechbrain==0.5.14
+sympy @ file:///croot/sympy_1668202399572/work
+termcolor==2.3.0
+threadpoolctl==3.1.0
+toml==0.10.2
+torch==2.0.0
+torchaudio==2.0.0
+torchvision==0.15.0
+tqdm==4.65.0
+triton==2.0.0
+typed-ast==1.5.4
+typing_extensions==4.5.0
+urllib3==1.26.15
+virtualenv==20.22.0
+wcwidth==0.2.6
+yamllint==1.23.0
+
+
+2023-05-11 15:16:56,112 - speechbrain.utils.superpowers - DEBUG - 69c8a82
+
+
+2023-05-11 15:16:56,990 - speechbrain.core - INFO - Info: auto_mix_prec arg from hparam file is used
+2023-05-11 15:16:56,990 - speechbrain.core - INFO - Info: noprogressbar arg from hparam file is used
+2023-05-11 15:16:57,564 - speechbrain.core - INFO - 897.3k trainable parameters in Separation
+2023-05-11 15:16:57,647 - speechbrain.utils.checkpoints - INFO - Loading a checkpoint from results/sepformer-custom/1234/save/CKPT+2023-05-11+00-36-22+00
+2023-05-11 15:16:57,689 - speechbrain.utils.epoch_loop - INFO - Going into epoch 5
+2023-05-11 15:22:57,517 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 627, in <module>
+    separator.fit(
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/core.py", line 1225, in fit
+    self._fit_train(train_set=train_set, epoch=epoch, enable=enable)
+  File "/home/kilin/.conda/envs/sepformer/lib/python3.10/site-packages/speechbrain/core.py", line 1078, in _fit_train
+    loss = self.fit_batch(batch)
+  File "/home/kilin/cae_proj_raindrop/sepformer/training/train.py", line 157, in fit_batch
+    loss < self.hparams.loss_upper_lim and loss.nelement() > 0
+RuntimeError: Boolean value of Tensor with more than one value is ambiguous
