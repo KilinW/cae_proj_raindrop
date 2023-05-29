@@ -44,17 +44,18 @@ for time_diffs in np.arange(0.001, 0.1, 0.001):
             folder = choose_folder()
             
             model.set_force(lambda t: force_a if t < time_diffs else force_a + force_b)
-            r = model.voltage()
+            r = model.voltage(method='Radau')
             wavf.write(f'./data_{seed}/{folder}/mixture/{force_a:01.1f}_{force_b:01.1f}_{time_diffs:01.3f}.wav', 16000, r.y[ 2 ].astype(np.float32)/5)
             
             model.set_force(lambda t: force_a)
-            r = model.voltage()
+            r = model.voltage(method='Radau')
             wavf.write(f'./data_{seed}/{folder}/source1/{force_a:01.1f}_{force_b:01.1f}_{time_diffs:01.3f}.wav', 16000, r.y[ 2 ].astype(np.float32)/5)
             
             model.set_force(lambda t: force_b if t > time_diffs else 0)
-            r = model.voltage()
+            r = model.voltage(method='Radau')
             wavf.write(f'./data_{seed}/{folder}/source2/{force_a:01.1f}_{force_b:01.1f}_{time_diffs:01.3f}.wav', 16000, r.y[ 2 ].astype(np.float32)/5)
 
 ## Make a copy of current setting to data folder
 shutil.copy('data_gen.py', f'data_{seed}/data_gen.py')
 shutil.copytree('core', f'data_{seed}/core')
+
