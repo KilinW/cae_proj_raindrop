@@ -130,15 +130,16 @@ class piezo_film():
 
         return [ eta1dot, eta1ddot, v2dot ]
     
-    def voltage(self):
+    def voltage(self, method: str='RK45'):
         vphi = self.vtheta*(self.d_phi(self.Lp2) 
                             - self.d_phi(self.Lp1))
         para = [ self.Cp, self.R, vphi, self.zeta, self.alpha**2*math.sqrt(self.EI1/self.m1) ]
-        return solve_ivp( self.cantilever_actuator_eq_solver, 
+        return solve_ivp( self.cantilever_actuator_eq_solver,
                          [ 0, self.time_end ], 
                          [ 0, 0, 0 ], 
                          args=[ para ], 
-                         t_eval=np.linspace( 0, self.time_end, self.time_step ) ) # type: ignore
+                         t_eval=np.linspace( 0, self.time_end, self.time_step ),
+                         method=method ) # type: ignore
     
     def time_span(self, time_span: float, step: float=1000):
         self.time_end = time_span
