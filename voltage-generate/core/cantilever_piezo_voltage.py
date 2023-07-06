@@ -5,6 +5,7 @@ from scipy.optimize import root
 import math
 from scipy.integrate import solve_ivp
 import timeit
+from typing import Callable, Optional
 
 class piezo_film():
     def __init__(self):
@@ -35,7 +36,7 @@ class piezo_film():
         self.R = 1 * 1e6                    ## external circuit load resistance
         self.zeta = 0.043                   ## damping ratio (Including internal damping and air damping)
         
-        self.force = lambda t: 0.08*24
+        self.force: Callable[[float], float] = lambda t: 0.08*24
         self.time_end = 0.2
         self.time_step = 1000
         
@@ -78,7 +79,7 @@ class piezo_film():
 
     # 6 # find the mode shape coefficient A1
     def get_A1(self):
-        self.alpha = root(self.det_A, 0).x[0]      # Natural frequency of the cantilever omega = alpha^2*sqrt(EI1/m1)
+        self.alpha = root(self.det_A, 0).x[0]       # Natural frequency of the cantilever omega = alpha^2*sqrt(EI1/m1)
         cos_L = np.cos(self.alpha*self.L1)
         sin_L = np.sin(self.alpha*self.L1)
         cosh_L = np.cosh(self.alpha*self.L1)
@@ -125,12 +126,16 @@ class piezo_film():
         eta1 = in_[ 0 ]
         eta1dot = in_[ 1 ]
         v2 = in_[ 2 ]
-        eta1ddot = -2 * zeta * omega * eta1dot - omega**2 * eta1 - vphi*v2 - self.force(t)
-        v2dot = -1 / ( Cp*R ) * v2 + vphi/Cp*eta1dot
+        eta1ddot = -2 * zeta * omega * eta1dot - omega**2 * eta1 - vphi*v2 + self.force(t)
+        v2dot = -1 / ( Cp*R ) * v2 - vphi/Cp*eta1dot
 
         return [ eta1dot, eta1ddot, v2dot ]
     
-    def voltage(self, method: str='RK45'):
+    
+    def voltage(self, method: str='RK45', force: Callable[[float], float] = None):
+        if force is not None:
+            self.force = force
+
         vphi = self.vtheta*(self.d_phi(self.Lp2) 
                             - self.d_phi(self.Lp1))
         para = [ self.Cp, self.R, vphi, self.zeta, self.alpha**2*math.sqrt(self.EI1/self.m1) ]
@@ -141,6 +146,67 @@ class piezo_film():
                          t_eval=np.linspace( 0, self.time_end, self.time_step ),
                          method=method ) # type: ignore
     
+    def voltage_to_force_A(self, voltages: np.ndarray, dt: float):
+
+        # Differentiation of the voltage
+        d_voltages = np.gradient(voltages, dt)
+        dd_voltages = np.gradient(d_voltages, dt)
+        # Integration of the voltage
+        i_voltages = np.cumsum(voltages)*dt
+        omega = self.alpha**2*math.sqrt(self.EI1/self.m1)
+        A = (self.Cp/(-self.vtheta*self.d_phi(self.Lp2)))
+
+        B = (1/(-self.vtheta*self.d_phi(self.Lp2)*self.R)
+             + (2*self.Cp*omega)/(-self.vtheta*self.d_phi(self.Lp2)))
+        
+        C = ((2*self.zeta*omega)/(-self.vtheta*self.d_phi(self.Lp2)*self.R)
+             + (self.Cp*omega**2)/(-self.vtheta*self.d_phi(self.Lp2))
+             + self.vtheta*self.d_phi(self.Lp2)
+        )
+
+        D = (2*omega**2)/(-self.vtheta*self.d_phi(self.Lp2)*self.R)
+
+        return A*dd_voltages + B*d_voltages + C*voltages + D*i_voltages
+    
+    def voltage_to_force_B(self, voltages: np.ndarray, dt: float):
+
+        # Differentiation of the voltage
+        d_voltages = np.gradient(voltages, dt)
+        # Integration of the voltage
+        i_voltages = np.cumsum(voltages)*dt
+        omega = self.alpha**2*math.sqrt(self.EI1/self.m1)
+        A = (2*self.Cp*self.zeta*omega)/(-self.vtheta*self.d_phi(self.Lp2))
+
+        B = ((2*self.zeta*omega)/(-self.vtheta*self.d_phi(self.Lp2)*self.R)
+            + (2*self.Cp*omega**2)/(-self.vtheta*self.d_phi(self.Lp2))
+            + self.vtheta*self.d_phi(self.Lp2))
+        
+        C = (2*omega**2)/(-self.vtheta*self.d_phi(self.Lp2)*self.R)
+
+        return A*d_voltages + B*voltages + C*i_voltages
+
+
+    def voltage_to_eta(self, voltages: np.ndarray, dt: float):
+    
+        # Differentiation of the voltage
+        d_voltages = np.gradient(voltages, dt)
+        # Integration of the voltage
+        i_voltages = np.cumsum(voltages)*dt
+        
+        eta = (self.Cp*voltages + i_voltages/self.R)/(-self.vtheta*self.d_phi(self.Lp2))
+        d_eta = (self.Cp*d_voltages + voltages/self.R)/(-self.vtheta*self.d_phi(self.Lp2))
+        
+        # Get reference dd_eta from actual function
+        vphi = self.vtheta*(self.d_phi(self.Lp2) 
+                            - self.d_phi(self.Lp1))
+        para = [ self.Cp, self.R, vphi, self.zeta, self.alpha**2*math.sqrt(self.EI1/self.m1) ]
+        dd_eta_ref = np.array([self.cantilever_actuator_eq_solver(dt*i, [eta[i], d_eta[i], voltages[i]], para)[1] for i in range(len(eta))])
+
+        # Calculate dd_eta from voltage
+
+        return eta, d_eta, dd_eta_ref
+
+
     def time_span(self, time_span: float, step: float=1000):
         self.time_end = time_span
         self.time_step = step
