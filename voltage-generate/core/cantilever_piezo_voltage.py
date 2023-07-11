@@ -226,3 +226,26 @@ class piezo_film():
     def piezo_coupling(self, coupling: float):
         self.vtheta = coupling
         
+    def set_thickness(self, substrate: float = None, piezofilm: float = None):
+        '''
+        parameters:
+            substrate: thickness of the substrate (Unit: m)
+            piezofilm: thickness of the piezofilm (Unit: m)
+        '''
+        if substrate is not None:
+            self.h1s = substrate
+        if piezofilm is not None:
+            self.h1p = piezofilm
+        self.cal_properties()
+    
+    def set_youngs(self, substrate: float = None, piezofilm: float = None):
+        '''
+        parameters:
+            substrate: Young's modulus of the substrate (Unit: Pa)
+            piezofilm: Young's modulus of the piezofilm (Unit: Pa)
+        '''
+        if substrate is not None:
+            self.Ys = substrate
+        if piezofilm is not None:
+            self.Yp = piezofilm
+        self.cal_properties()
