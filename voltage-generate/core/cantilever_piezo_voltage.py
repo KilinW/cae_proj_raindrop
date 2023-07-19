@@ -147,6 +147,17 @@ class piezo_film():
                          method=method ) # type: ignore
     
     def voltage_to_force_A(self, voltages: np.ndarray, dt: float):
+        '''
+        Assume w(x, t)=ΣΦ(x)η(t)
+        This method is based on the relationship between the v(t) and η(t)
+        
+        return:
+            force: estimated force
+            A item: 2nd derivative of the voltage times a constant
+            B item: 1st derivative of the voltage times a constant
+            C item: voltage times a constant
+            D item: 1st integral of the voltage times a constant
+        '''
 
         # Differentiation of the voltage
         d_voltages = np.gradient(voltages, dt)
@@ -166,9 +177,22 @@ class piezo_film():
 
         D = (2*omega**2)/(-self.vtheta*self.d_phi(self.Lp2)*self.R)
 
-        return A*dd_voltages + B*d_voltages + C*voltages + D*i_voltages
+        return (A*dd_voltages + B*d_voltages + C*voltages + D*i_voltages), A*dd_voltages, B*d_voltages, C*voltages, D*i_voltages
     
     def voltage_to_force_B(self, voltages: np.ndarray, dt: float):
+        '''
+        Assume w(x, t)=ΣΦ(x)η(t)
+        This method is based on the 2nd derivatige of η(t) with respect to t is equal to ω^2*η(t)
+        
+        η(t)'' = ω^2*η(t)
+
+        return:
+            force: estimated force = A item + B item + C item
+            A item: derivative of voltage times a constant
+            B item: voltage times a constant
+            C item: integral of voltage times a constant
+        
+        '''
 
         # Differentiation of the voltage
         d_voltages = np.gradient(voltages, dt)
@@ -183,7 +207,7 @@ class piezo_film():
         
         C = (2*omega**2)/(-self.vtheta*self.d_phi(self.Lp2)*self.R)
 
-        return A*d_voltages + B*voltages + C*i_voltages
+        return (A*d_voltages + B*voltages + C*i_voltages), A*d_voltages, B*voltages, C*i_voltages
 
 
     def voltage_to_eta(self, voltages: np.ndarray, dt: float):
